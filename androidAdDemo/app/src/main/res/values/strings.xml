@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AdDemo</string>
+    <string name="the_network_is_abnormal">当前网络未连接</string>
+    <string name="load_ad">进入加载广告页面</string>
+    <string name="Banner">横幅Banner</string>
+    <string name="Interstitial">插屏Interstitial</string>
+    <string name="Splash">开屏Splash</string>
+    <string name="MeidaVideo">插播广告IMA</string>
+
+</resources>
