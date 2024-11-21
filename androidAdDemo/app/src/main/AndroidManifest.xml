@@ -1,63 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:ignore="Instantiatable">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="Instantiatable">
 
     <uses-feature
-            android:name="android.software.leanback"
-            android:required="false" />
+        android:name="android.software.leanback"
+        android:required="false" />
     <uses-feature
-            android:name="android.hardware.touchscreen"
-            android:required="false" />
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-            android:name=".App"
-            android:allowBackup="true"
-            android:banner="@mipmap/ic_launcher"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:dataExtractionRules="@xml/data_extraction_rules"
-            android:fullBackupContent="@xml/backup_rules"
-            android:supportsRtl="true"
-            android:usesCleartextTraffic="true"
-            android:theme="@style/Theme.BsLauncher">
+        android:name=".App"
+        android:allowBackup="true"
+        android:banner="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.BsLauncher">
         <meta-data
-                android:name="applovin.sdk.verbose_logging"
-                android:value="true" />
+            android:name="applovin.sdk.verbose_logging"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2540674760491959~9832388524" />
 
         <activity
-                android:name=".MaxSearchActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/Theme.BsLauncher"
-                android:exported="true" />
+            android:name=".MaxSearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher"
+            android:exported="true" />
         <activity
-                android:name=".MaxSearchResultActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/Theme.BsLauncher"
-                android:exported="true" />
+            android:name=".MaxSearchResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher"
+            android:exported="true" />
         <activity
-                android:name=".MaxMainActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/Theme.BsLauncher"
-                android:exported="true" />
+            android:name=".MaxMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher"
+            android:exported="true" />
         <activity
-                android:name=".MaxAdDrawActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/Theme.BsLauncher"
-                android:exported="true" />
+            android:name=".MaxAdDrawActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher"
+            android:exported="true" />
         <activity
-                android:name=".MaxWorkPrintActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/Theme.BsLauncher"
-                android:exported="true" />
+            android:name=".MaxWorkPrintActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher"
+            android:exported="true" />
         <activity
-                android:name=".MaxSplashActivity"
-                android:launchMode="singleTask"
-                android:screenOrientation="portrait"
-                android:theme="@style/Theme.BsLauncher"
-                android:exported="true">
+            android:name=".MaxSplashActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

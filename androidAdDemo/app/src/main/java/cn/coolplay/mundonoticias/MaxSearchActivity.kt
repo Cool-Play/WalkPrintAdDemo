@@ -10,15 +10,19 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
+import com.adjust.sdk.Adjust
+import com.adjust.sdk.AdjustAdRevenue
+import com.adjust.sdk.AdjustConfig
 import com.applovin.mediation.MaxAd
 import com.applovin.mediation.MaxAdFormat
+import com.applovin.mediation.MaxAdRevenueListener
 import com.applovin.mediation.MaxAdViewAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
 import com.applovin.sdk.AppLovinSdkUtils
 
 
-class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
+class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
 
     private var adContainer: FrameLayout? = null
     private var adMrecContainer: FrameLayout? = null
@@ -43,6 +47,7 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
             val heightPx = AppLovinSdkUtils.dpToPx(this, heightDp)
             adView?.layoutParams = FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, heightPx)
             adView?.setListener(this)
+            adView?.setRevenueListener(this)
             adView?.loadAd()
         }
         adMrecView = MaxAdView(BuildConfig.mrecId, MaxAdFormat.MREC, this)
@@ -51,6 +56,7 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
             val heightPx = AppLovinSdkUtils.dpToPx(this, heightDp)
             adView?.layoutParams = FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, heightPx)
             adMrecView?.setListener(this)
+            adMrecView?.setRevenueListener(this)
             adMrecView?.loadAd()
         }
     }
@@ -62,6 +68,7 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
     // 消亡banner广告，
     private fun destroyTpBanner() {
         adView?.destroy()
+        adMrecView?.destroy()
     }
 
     override fun onDestroy() {
@@ -107,6 +114,16 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
     }
 
     override fun onAdCollapsed(p0: MaxAd) {
+    }
+
+    override fun onAdRevenuePaid(ad: MaxAd) {
+        val adjustAdRevenue = AdjustAdRevenue(AdjustConfig.AD_REVENUE_APPLOVIN_MAX)
+        adjustAdRevenue.setRevenue(ad.revenue, "USD")
+        adjustAdRevenue.setAdRevenueNetwork(ad.networkName)
+        adjustAdRevenue.setAdRevenueUnit(ad.adUnitId)
+        adjustAdRevenue.setAdRevenuePlacement(ad.placement)
+
+        Adjust.trackAdRevenue(adjustAdRevenue)
     }
 
 }

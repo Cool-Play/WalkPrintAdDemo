@@ -10,14 +10,18 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import coil.load
+import com.adjust.sdk.Adjust
+import com.adjust.sdk.AdjustAdRevenue
+import com.adjust.sdk.AdjustConfig
 import com.applovin.mediation.MaxAd
 import com.applovin.mediation.MaxAdFormat
+import com.applovin.mediation.MaxAdRevenueListener
 import com.applovin.mediation.MaxAdViewAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
 
 
-class MaxAdDrawActivity : AppCompatActivity(), MaxAdViewAdListener {
+class MaxAdDrawActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
 
     private var adContainer: FrameLayout? = null
     private var adView: MaxAdView? = null
@@ -44,6 +48,7 @@ class MaxAdDrawActivity : AppCompatActivity(), MaxAdViewAdListener {
 
             adView?.layoutParams = FrameLayout.LayoutParams(heightDp, heightDp, Gravity.CENTER)
             adView?.setListener(this)
+            adView?.setRevenueListener(this)
             tvShow?.setOnClickListener {
                 aiResult?.isVisible = false
                 adView?.loadAd()
@@ -96,6 +101,16 @@ class MaxAdDrawActivity : AppCompatActivity(), MaxAdViewAdListener {
     }
 
     override fun onAdCollapsed(p0: MaxAd) {
+    }
+
+    override fun onAdRevenuePaid(ad: MaxAd) {
+        val adjustAdRevenue = AdjustAdRevenue(AdjustConfig.AD_REVENUE_APPLOVIN_MAX)
+        adjustAdRevenue.setRevenue(ad.revenue, "USD")
+        adjustAdRevenue.setAdRevenueNetwork(ad.networkName)
+        adjustAdRevenue.setAdRevenueUnit(ad.adUnitId)
+        adjustAdRevenue.setAdRevenuePlacement(ad.placement)
+
+        Adjust.trackAdRevenue(adjustAdRevenue)
     }
 
 }

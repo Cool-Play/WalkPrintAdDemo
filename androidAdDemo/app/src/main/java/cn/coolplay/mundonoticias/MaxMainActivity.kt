@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.applovin.sdk.AppLovinSdk
 
 
 class MaxMainActivity : AppCompatActivity() {
@@ -20,6 +21,9 @@ class MaxMainActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.tv_ai_search_pic).setOnClickListener {
             startActivity(Intent(this, MaxSearchActivity::class.java))
+        }
+        findViewById<Button>(R.id.tv_show_debug).setOnClickListener {
+            Runnable { AppLovinSdk.getInstance(applicationContext).showMediationDebugger() }.run()
         }
     }
 

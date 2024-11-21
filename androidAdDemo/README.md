@@ -15,6 +15,10 @@ dependencies {
   // Applovin
     implementation("com.applovin:applovin-sdk:13.0.1")
     implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
+    //统计
+    implementation 'com.adjust.sdk:adjust-android:4.28.7'
+    //google
+    implementation 'com.applovin.mediation:google-adapter:23.5.0.0
 }
 ```
 
@@ -31,6 +35,11 @@ dependencies {
         <meta-data  
                 android:name="applovin.sdk.verbose_logging"
                 android:value="true" />
+                
+         <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2540674760491959~9832388524" />
+        
     </application>
 </manifest>
 ```
@@ -59,13 +68,36 @@ class App : Application() {
       private fun initSdk() {
         val executor = Executors.newSingleThreadExecutor();
         executor.execute {
-            val initConfig =
-                AppLovinSdkInitializationConfiguration.builder("填写sdkKey", this)
+            val initConfigBuilder =
+                AppLovinSdkInitializationConfiguration.builder(BuildConfig.sdkKey, this)
                     .setMediationProvider(AppLovinMediationProvider.MAX)
-                    .build()
+            //作为测试使用        
+            val currentGaid = AdvertisingIdClient.getAdvertisingIdInfo(this).id
+            if (currentGaid != null) {
+                Log.i("Applovin", "currentGaid: $currentGaid")
+                initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
+            }
 
-            AppLovinSdk.getInstance(this).initialize(initConfig) {
-                Log.i("Applovin", "onSdkInitialized")
+            val initConfig = initConfigBuilder.build()
+            AppLovinSdk.getInstance(this).apply {
+                //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR
+                settings.setExtraParameter("google_test_device_hashed_id", "a5cabc60-3d80-4df0-9265-282aaacddab1")
+                //隐私合规 如果自已已经存在 可以不使用
+                settings.termsAndPrivacyPolicyFlowSettings.apply {
+                    isEnabled = true
+                    privacyPolicyUri = Uri.parse("https://imsoauthh5.efercro.com/privacyPrint.html")
+                    //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR
+                    debugUserGeography = AppLovinSdkConfiguration.ConsentFlowUserGeography.GDPR
+
+                }
+                initialize(initConfig) {
+                    Log.i("Applovin", "onSdkInitialized")
+                    // Initialize Adjust SDK
+                    val config =
+                        AdjustConfig(this@App, "{YourAppToken}", AdjustConfig.ENVIRONMENT_SANDBOX)
+                    Adjust.onCreate(config)
+                    registerActivityLifecycleCallbacks(AdjustLifecycleCallbacks())
+                }
             }
             executor.shutdown()
         }
