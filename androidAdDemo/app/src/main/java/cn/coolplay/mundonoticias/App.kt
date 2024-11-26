@@ -10,10 +10,8 @@ import com.adjust.sdk.Adjust
 import com.adjust.sdk.AdjustConfig
 import com.applovin.sdk.AppLovinMediationProvider
 import com.applovin.sdk.AppLovinSdk
-import com.applovin.sdk.AppLovinSdkConfiguration
 import com.applovin.sdk.AppLovinSdkInitializationConfiguration
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
-import java.util.Collections
 import java.util.concurrent.Executors
 
 
@@ -38,18 +36,18 @@ class App : Application() {
             val currentGaid = AdvertisingIdClient.getAdvertisingIdInfo(this).id
             if (currentGaid != null) {
                 Log.i("Applovin", "currentGaid: $currentGaid")
-                initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
+//                initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
             }
 
             val initConfig = initConfigBuilder.build()
             AppLovinSdk.getInstance(this).apply {
                 //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR
-                settings.setExtraParameter("google_test_device_hashed_id", "a5cabc60-3d80-4df0-9265-282aaacddab1")
+//                settings.setExtraParameter("google_test_device_hashed_id", "a5cabc60-3d80-4df0-9265-282aaacddab1")
                 settings.termsAndPrivacyPolicyFlowSettings.apply {
                     isEnabled = true
                     privacyPolicyUri = Uri.parse("https://imsoauthh5.efercro.com/privacyPrint.html")
                     //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR
-                    debugUserGeography = AppLovinSdkConfiguration.ConsentFlowUserGeography.GDPR
+//                    debugUserGeography = AppLovinSdkConfiguration.ConsentFlowUserGeography.GDPR
 
                 }
                 initialize(initConfig) {
