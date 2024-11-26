@@ -52,11 +52,11 @@ class App : Application() {
                 }
                 initialize(initConfig) {
                     Log.i("Applovin", "onSdkInitialized")
-                    // Initialize Adjust SDK
-                    val config =
-                        AdjustConfig(this@App, "{YourAppToken}", AdjustConfig.ENVIRONMENT_SANDBOX)
-                    Adjust.onCreate(config)
-                    registerActivityLifecycleCallbacks(AdjustLifecycleCallbacks())
+                    // Initialize Adjust SDK 统计目前不需要
+//                    val config =
+//                        AdjustConfig(this@App, "{YourAppToken}", AdjustConfig.ENVIRONMENT_SANDBOX)
+//                    Adjust.onCreate(config)
+//                    registerActivityLifecycleCallbacks(AdjustLifecycleCallbacks())
                 }
             }
             executor.shutdown()

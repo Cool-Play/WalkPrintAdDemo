@@ -75,28 +75,26 @@ class App : Application() {
             val currentGaid = AdvertisingIdClient.getAdvertisingIdInfo(this).id
             if (currentGaid != null) {
                 Log.i("Applovin", "currentGaid: $currentGaid")
+                //这里为了测试,上线时不需要
                 initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
             }
 
             val initConfig = initConfigBuilder.build()
             AppLovinSdk.getInstance(this).apply {
                 //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR
+                //上线时不需要
                 settings.setExtraParameter("google_test_device_hashed_id", "a5cabc60-3d80-4df0-9265-282aaacddab1")
-                //隐私合规 如果自已已经存在 可以不使用
+                //隐私合规 如果自已已经存在一套 可以不使用
                 settings.termsAndPrivacyPolicyFlowSettings.apply {
                     isEnabled = true
                     privacyPolicyUri = Uri.parse("https://imsoauthh5.efercro.com/privacyPrint.html")
-                    //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR
+                    //如果要从 GDPR 区域外部测试 Google CMP，请使用以下方法之一将调试用户地理位置设置为：GDPR 
+                    //上线时不需要
                     debugUserGeography = AppLovinSdkConfiguration.ConsentFlowUserGeography.GDPR
 
                 }
                 initialize(initConfig) {
                     Log.i("Applovin", "onSdkInitialized")
-                    // Initialize Adjust SDK
-                    val config =
-                        AdjustConfig(this@App, "{YourAppToken}", AdjustConfig.ENVIRONMENT_SANDBOX)
-                    Adjust.onCreate(config)
-                    registerActivityLifecycleCallbacks(AdjustLifecycleCallbacks())
                 }
             }
             executor.shutdown()
