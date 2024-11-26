@@ -42,6 +42,10 @@ https://developers.applovin.com/en/max/ios/overview/manual-integration/
     }];
     
     //注：SD_KEY 、TermsOfServiceURL、PrivacyPolicyURL等都在plist文件中配置了，可根据实际情况进行替换尤其是PrivacyPolicyURL和TermsOfServiceURL
+//如果初始化sdk时设置了测试模式 例如如下代码
+//builder.testDeviceAdvertisingIdentifiers = @[yourIDFA];
+
+ 需要在上线前改为正式模式 即注释掉该行代码
 ```
 
 # 3. banner、MREC 广告
