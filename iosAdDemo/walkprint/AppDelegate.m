@@ -20,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //ad mob
     [GADMobileAds.sharedInstance startWithCompletionHandler:nil];
     [self checkoutIDFA];
     [ALPrivacySettings setHasUserConsent: YES];
