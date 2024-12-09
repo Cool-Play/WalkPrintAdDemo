@@ -45,4 +45,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 # Ignore Xcode User Interface state files
-
+**/UserInterfaceState.xcuserstate
