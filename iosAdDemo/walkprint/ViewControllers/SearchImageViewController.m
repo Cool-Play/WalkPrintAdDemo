@@ -37,7 +37,7 @@
 - (void)setupBannerAd {
     NSString *Banner_AD_UNIT_ID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Banner_AD_UNIT_ID"];
     self.bannerAdView = [[MAAdView alloc] initWithAdUnitIdentifier:Banner_AD_UNIT_ID];
-    self.bannerAdView.frame = CGRectMake(0, 44, self.view.frame.size.width, 50); // 在顶部显示
+    self.bannerAdView.frame = CGRectMake(0, 144, self.view.frame.size.width, 120); // 在顶部显示
     self.bannerAdView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.bannerAdView];
     
@@ -56,13 +56,13 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 10;
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0);
     
     // 动态计算 itemSize，以便在不同屏幕尺寸下显示三列
     CGFloat screenWidth = self.view.frame.size.width;
     CGFloat itemSize = (screenWidth - 40) / 3; // 每行3个item
     layout.itemSize = CGSizeMake(itemSize, itemSize);
-
+    NSLog(@"item size height: %lf width :%lf",itemSize,itemSize);
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 144, self.view.frame.size.width, self.view.frame.size.height - 194) collectionViewLayout:layout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -112,7 +112,7 @@
     if ((indexPath.item + 1) % 6 == 0 && self.nativeAdViews.count > 0) { // 每第6个cell展示广告
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AdCell" forIndexPath:indexPath];
         [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-
+        
         // 获取当前广告视图，循环取出
         UIView *adView = self.nativeAdViews[(indexPath.item / 6) % self.nativeAdViews.count];
         adView.frame = cell.contentView.bounds;
@@ -120,17 +120,21 @@
         
         return cell;
     }
-
+    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageCell" forIndexPath:indexPath];
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    cell.backgroundColor = [UIColor systemGray4Color];
-
+    if (@available(iOS 13.0, *)) {
+        cell.backgroundColor = [UIColor systemGray4Color];
+    } else {
+        // Fallback on earlier versions
+    }
+    
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.bounds];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
     imageView.image = [UIImage imageNamed:self.imageData[indexPath.item]]; // 替换为实际数据
     [cell.contentView addSubview:imageView];
-
+    
     return cell;
 }
 

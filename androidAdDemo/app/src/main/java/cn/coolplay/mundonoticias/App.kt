@@ -12,6 +12,7 @@ import com.applovin.sdk.AppLovinMediationProvider
 import com.applovin.sdk.AppLovinSdk
 import com.applovin.sdk.AppLovinSdkInitializationConfiguration
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import java.util.Collections
 import java.util.concurrent.Executors
 
 

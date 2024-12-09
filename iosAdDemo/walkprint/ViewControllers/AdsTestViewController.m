@@ -2,7 +2,7 @@
 //  AdsTestViewController.m
 //  walkprint
 //
-//  Created by 小柚子 on 2024/11/20.
+//  Created by 小柚子 on 2024/12/5.
 //
 
 #import "AdsTestViewController.h"
@@ -22,15 +22,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self createMRECAd];
-//    [self createNativeAd];
+    [self createMRECAd];
+    [self createNativeAd];
     [self setupBannerAd];
 }
 
 - (void)setupBannerAd {
     NSString *Banner_AD_UNIT_ID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Banner_AD_UNIT_ID"];
     self.bannerAdView = [[MAAdView alloc] initWithAdUnitIdentifier:Banner_AD_UNIT_ID];
-    self.bannerAdView.frame = CGRectMake(0, 100, self.view.frame.size.width, 50); // 在顶部显示
+    self.bannerAdView.frame = CGRectMake(0, 320, self.view.frame.size.width, 300); // 在顶部显示
     self.bannerAdView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.bannerAdView];
     
@@ -40,64 +40,67 @@
 
 - (void)createNativeAd
 {
-  self.nativeAdLoader = [[MANativeAdLoader alloc] initWithAdUnitIdentifier: @"3db96cf9078275b0"];
-  self.nativeAdLoader.nativeAdDelegate = self;
-  [self.nativeAdLoader loadAd];
+    NSString *Native_AD_UNIT_ID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Native_AD_UNIT_ID"];
+    self.nativeAdLoader = [[MANativeAdLoader alloc] initWithAdUnitIdentifier: Native_AD_UNIT_ID];//3db96cf9078275b0
+    self.nativeAdLoader.nativeAdDelegate = self;
+    [self.nativeAdLoader loadAd];
 }
 
 - (void)didLoadNativeAd:(MANativeAdView *)nativeAdView forAd:(MAAd *)ad
 {
-  // Clean up any pre-existing native ad to prevent memory leaks
-  if ( self.nativeAd )
-  {
-    [self.nativeAdLoader destroyAd: self.nativeAd];
-  }
-
-  // Save ad for cleanup
-  self.nativeAd = ad;
-
-  if ( self.nativeAdView )
-  {
-    [self.nativeAdView removeFromSuperview];
-  }
-
-  // Add ad view to view
-  self.nativeAdView = nativeAdView;
-  [self.view addSubview: nativeAdView];
+    // Clean up any pre-existing native ad to prevent memory leaks
+    if ( self.nativeAd )
+    {
+        [self.nativeAdLoader destroyAd: self.nativeAd];
+    }
+    
+    // Save ad for cleanup
+    self.nativeAd = ad;
+    
+    if ( self.nativeAdView )
+    {
+        [self.nativeAdView removeFromSuperview];
+    }
+    
+    // Add ad view to view
+    self.nativeAdView = nativeAdView;
+    [self.view addSubview: nativeAdView];
 }
 
 - (void)didFailToLoadNativeAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withError:(MAError *)error
 {
-  // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay
+    // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay
+    NSLog(@"load native ads error:%@",error.message);
 }
 
 - (void)didClickNativeAd:(MAAd *)ad
 {
-  // Optional click callback
+    // Optional click callback
 }
 
 
 - (void)createMRECAd
 {
-  self.adView = [[MAAdView alloc] initWithAdUnitIdentifier: @"6875a8f6667278ea" adFormat: MAAdFormat.mrec];
-  self.adView.delegate = self;
-
-  // MREC width and height are 300 and 250 respectively, on iPhone and iPad
-  CGFloat width = 300;
-  CGFloat height = 250;
-
-  // Center the MREC
-  CGFloat x = self.view.center.x - 150;
-
-    self.adView.frame = CGRectMake(x, x, width, height);
-
-  // Set background or background color for MREC ads to be fully functional
+    NSString *MERCs_AD_UNIT_ID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"MERCs_AD_UNIT_ID"];
+    self.adView = [[MAAdView alloc] initWithAdUnitIdentifier: MERCs_AD_UNIT_ID adFormat: MAAdFormat.mrec];
+    self.adView.delegate = self;
+    
+    // MREC width and height are 300 and 250 respectively, on iPhone and iPad
+    CGFloat width = 300;
+    CGFloat height = 250;
+    
+    // Center the MREC
+    CGFloat x = self.view.center.x - 150;
+    CGFloat y = self.view.frame.size.height - 150 - height;
+    self.adView.frame = CGRectMake(x, y, width, height);
+    
+    // Set background or background color for MREC ads to be fully functional
     self.adView.backgroundColor = [UIColor grayColor];
-
-  [self.view addSubview: self.adView];
-
-  // Load the ad
-  [self.adView loadAd];
+    
+    [self.view addSubview: self.adView];
+    
+    // Load the ad
+    [self.adView loadAd];
 }
 
 #pragma mark - MAAdDelegate Protocol

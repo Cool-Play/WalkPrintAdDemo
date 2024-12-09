@@ -7,130 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49FEECE12CEDB8B4001646EF /* AppLovinSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FEECE02CEDB8B4001646EF /* AppLovinSDK.xcframework */; };
-		49FEECE22CEDB8B4001646EF /* AppLovinSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FEECE02CEDB8B4001646EF /* AppLovinSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B141B025CEAA9291E04A27B /* Pods_walkprint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764465C0B5AECD39D2D702B /* Pods_walkprint.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		49FEECC22CEDB893001646EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 49FEEC9E2CEDB891001646EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49FEECA52CEDB891001646EF;
-			remoteInfo = walkprint;
-		};
-		49FEECCC2CEDB893001646EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 49FEEC9E2CEDB891001646EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49FEECA52CEDB891001646EF;
-			remoteInfo = walkprint;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		49FEECE32CEDB8B4001646EF /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				49FEECE22CEDB8B4001646EF /* AppLovinSDK.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		49FEECA62CEDB891001646EF /* walkprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = walkprint.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49FEECC12CEDB893001646EF /* walkprintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = walkprintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49FEECCB2CEDB893001646EF /* walkprintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = walkprintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49FEECE02CEDB8B4001646EF /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppLovinSDK.xcframework; path = "../../../../Downloads/applovin-ios-sdk-13.0.1/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
+		2764465C0B5AECD39D2D702B /* Pods_walkprint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_walkprint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		497949C52D01669E00132166 /* walkprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = walkprint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F393B67F339CCF7F2B0B26D /* Pods-walkprint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walkprint.release.xcconfig"; path = "Target Support Files/Pods-walkprint/Pods-walkprint.release.xcconfig"; sourceTree = "<group>"; };
+		FD12CAB1421FE850ADA6BA7F /* Pods-walkprint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walkprint.debug.xcconfig"; path = "Target Support Files/Pods-walkprint/Pods-walkprint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		49FEECD32CEDB893001646EF /* Exceptions for "walkprint" folder in "walkprint" target */ = {
+		497949DC2D0166A200132166 /* Exceptions for "walkprint" folder in "walkprint" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 49FEECA52CEDB891001646EF /* walkprint */;
+			target = 497949C42D01669E00132166 /* walkprint */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		49FEECA82CEDB891001646EF /* walkprint */ = {
+		497949C72D01669E00132166 /* walkprint */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				49FEECD32CEDB893001646EF /* Exceptions for "walkprint" folder in "walkprint" target */,
+				497949DC2D0166A200132166 /* Exceptions for "walkprint" folder in "walkprint" target */,
 			);
 			path = walkprint;
-			sourceTree = "<group>";
-		};
-		49FEECC42CEDB893001646EF /* walkprintTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = walkprintTests;
-			sourceTree = "<group>";
-		};
-		49FEECCE2CEDB893001646EF /* walkprintUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = walkprintUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		49FEECA32CEDB891001646EF /* Frameworks */ = {
+		497949C22D01669E00132166 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FEECE12CEDB8B4001646EF /* AppLovinSDK.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49FEECBE2CEDB893001646EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49FEECC82CEDB893001646EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9B141B025CEAA9291E04A27B /* Pods_walkprint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49FEEC9D2CEDB891001646EF = {
+		4566BC2281B7D2DDF66B305C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49FEECA82CEDB891001646EF /* walkprint */,
-				49FEECC42CEDB893001646EF /* walkprintTests */,
-				49FEECCE2CEDB893001646EF /* walkprintUITests */,
-				49FEECDF2CEDB8B4001646EF /* Frameworks */,
-				49FEECA72CEDB891001646EF /* Products */,
+				FD12CAB1421FE850ADA6BA7F /* Pods-walkprint.debug.xcconfig */,
+				4F393B67F339CCF7F2B0B26D /* Pods-walkprint.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		497949BC2D01669E00132166 = {
+			isa = PBXGroup;
+			children = (
+				497949C72D01669E00132166 /* walkprint */,
+				497949C62D01669E00132166 /* Products */,
+				4566BC2281B7D2DDF66B305C /* Pods */,
+				EEF6D908A01FBBEFBEFFB68E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		49FEECA72CEDB891001646EF /* Products */ = {
+		497949C62D01669E00132166 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49FEECA62CEDB891001646EF /* walkprint.app */,
-				49FEECC12CEDB893001646EF /* walkprintTests.xctest */,
-				49FEECCB2CEDB893001646EF /* walkprintUITests.xctest */,
+				497949C52D01669E00132166 /* walkprint.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49FEECDF2CEDB8B4001646EF /* Frameworks */ = {
+		EEF6D908A01FBBEFBEFFB68E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49FEECE02CEDB8B4001646EF /* AppLovinSDK.xcframework */,
+				2764465C0B5AECD39D2D702B /* Pods_walkprint.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,134 +88,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49FEECA52CEDB891001646EF /* walkprint */ = {
+		497949C42D01669E00132166 /* walkprint */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49FEECD42CEDB893001646EF /* Build configuration list for PBXNativeTarget "walkprint" */;
+			buildConfigurationList = 497949DD2D0166A200132166 /* Build configuration list for PBXNativeTarget "walkprint" */;
 			buildPhases = (
-				49FEECA22CEDB891001646EF /* Sources */,
-				49FEECA32CEDB891001646EF /* Frameworks */,
-				49FEECA42CEDB891001646EF /* Resources */,
-				49FEECE32CEDB8B4001646EF /* Embed Frameworks */,
+				ABF3366B4523EE744141A2AC /* [CP] Check Pods Manifest.lock */,
+				497949C12D01669E00132166 /* Sources */,
+				497949C22D01669E00132166 /* Frameworks */,
+				497949C32D01669E00132166 /* Resources */,
+				3F64B5637B0F6D1F606979F1 /* [CP] Embed Pods Frameworks */,
+				365B27D7EBBAC4481EA04481 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				49FEECA82CEDB891001646EF /* walkprint */,
+				497949C72D01669E00132166 /* walkprint */,
 			);
 			name = walkprint;
-			packageProductDependencies = (
-			);
 			productName = walkprint;
-			productReference = 49FEECA62CEDB891001646EF /* walkprint.app */;
+			productReference = 497949C52D01669E00132166 /* walkprint.app */;
 			productType = "com.apple.product-type.application";
-		};
-		49FEECC02CEDB893001646EF /* walkprintTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 49FEECD92CEDB893001646EF /* Build configuration list for PBXNativeTarget "walkprintTests" */;
-			buildPhases = (
-				49FEECBD2CEDB893001646EF /* Sources */,
-				49FEECBE2CEDB893001646EF /* Frameworks */,
-				49FEECBF2CEDB893001646EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				49FEECC32CEDB893001646EF /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				49FEECC42CEDB893001646EF /* walkprintTests */,
-			);
-			name = walkprintTests;
-			packageProductDependencies = (
-			);
-			productName = walkprintTests;
-			productReference = 49FEECC12CEDB893001646EF /* walkprintTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		49FEECCA2CEDB893001646EF /* walkprintUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 49FEECDC2CEDB893001646EF /* Build configuration list for PBXNativeTarget "walkprintUITests" */;
-			buildPhases = (
-				49FEECC72CEDB893001646EF /* Sources */,
-				49FEECC82CEDB893001646EF /* Frameworks */,
-				49FEECC92CEDB893001646EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				49FEECCD2CEDB893001646EF /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				49FEECCE2CEDB893001646EF /* walkprintUITests */,
-			);
-			name = walkprintUITests;
-			packageProductDependencies = (
-			);
-			productName = walkprintUITests;
-			productReference = 49FEECCB2CEDB893001646EF /* walkprintUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		49FEEC9E2CEDB891001646EF /* Project object */ = {
+		497949BD2D01669E00132166 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					49FEECA52CEDB891001646EF = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					49FEECC02CEDB893001646EF = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 49FEECA52CEDB891001646EF;
-					};
-					49FEECCA2CEDB893001646EF = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 49FEECA52CEDB891001646EF;
+					497949C42D01669E00132166 = {
+						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
-			buildConfigurationList = 49FEECA12CEDB891001646EF /* Build configuration list for PBXProject "walkprint" */;
+			buildConfigurationList = 497949C02D01669E00132166 /* Build configuration list for PBXProject "walkprint" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 49FEEC9D2CEDB891001646EF;
+			mainGroup = 497949BC2D01669E00132166;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 49FEECA72CEDB891001646EF /* Products */;
+			productRefGroup = 497949C62D01669E00132166 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49FEECA52CEDB891001646EF /* walkprint */,
-				49FEECC02CEDB893001646EF /* walkprintTests */,
-				49FEECCA2CEDB893001646EF /* walkprintUITests */,
+				497949C42D01669E00132166 /* walkprint */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		49FEECA42CEDB891001646EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49FEECBF2CEDB893001646EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49FEECC92CEDB893001646EF /* Resources */ = {
+		497949C32D01669E00132166 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -274,22 +154,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		365B27D7EBBAC4481EA04481 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F64B5637B0F6D1F606979F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF3366B4523EE744141A2AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-walkprint-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		49FEECA22CEDB891001646EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49FEECBD2CEDB893001646EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49FEECC72CEDB893001646EF /* Sources */ = {
+		497949C12D01669E00132166 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,28 +223,17 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		49FEECC32CEDB893001646EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 49FEECA52CEDB891001646EF /* walkprint */;
-			targetProxy = 49FEECC22CEDB893001646EF /* PBXContainerItemProxy */;
-		};
-		49FEECCD2CEDB893001646EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 49FEECA52CEDB891001646EF /* walkprint */;
-			targetProxy = 49FEECCC2CEDB893001646EF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		49FEECD52CEDB893001646EF /* Debug */ = {
+		497949DE2D0166A200132166 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD12CAB1421FE850ADA6BA7F /* Pods-walkprint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5QZ63KP44;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = walkprint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -327,27 +241,29 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhk.rabbit.print.walkprint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elink.robot.walkprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		49FEECD62CEDB893001646EF /* Release */ = {
+		497949DF2D0166A200132166 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F393B67F339CCF7F2B0B26D /* Pods-walkprint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5QZ63KP44;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = walkprint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -355,20 +271,20 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhk.rabbit.print.walkprint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elink.robot.walkprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		49FEECD72CEDB893001646EF /* Debug */ = {
+		497949E02D0166A200132166 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -420,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -429,7 +345,7 @@
 			};
 			name = Debug;
 		};
-		49FEECD82CEDB893001646EF /* Release */ = {
+		497949E12D0166A200132166 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -475,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -484,114 +400,28 @@
 			};
 			name = Release;
 		};
-		49FEECDA2CEDB893001646EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5QZ63KP44;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhk.rabbit.print.walkprintTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/walkprint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/walkprint";
-			};
-			name = Debug;
-		};
-		49FEECDB2CEDB893001646EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5QZ63KP44;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhk.rabbit.print.walkprintTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/walkprint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/walkprint";
-			};
-			name = Release;
-		};
-		49FEECDD2CEDB893001646EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5QZ63KP44;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhk.rabbit.print.walkprintUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = walkprint;
-			};
-			name = Debug;
-		};
-		49FEECDE2CEDB893001646EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5QZ63KP44;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhk.rabbit.print.walkprintUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = walkprint;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49FEECA12CEDB891001646EF /* Build configuration list for PBXProject "walkprint" */ = {
+		497949C02D01669E00132166 /* Build configuration list for PBXProject "walkprint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49FEECD72CEDB893001646EF /* Debug */,
-				49FEECD82CEDB893001646EF /* Release */,
+				497949E02D0166A200132166 /* Debug */,
+				497949E12D0166A200132166 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49FEECD42CEDB893001646EF /* Build configuration list for PBXNativeTarget "walkprint" */ = {
+		497949DD2D0166A200132166 /* Build configuration list for PBXNativeTarget "walkprint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49FEECD52CEDB893001646EF /* Debug */,
-				49FEECD62CEDB893001646EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		49FEECD92CEDB893001646EF /* Build configuration list for PBXNativeTarget "walkprintTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				49FEECDA2CEDB893001646EF /* Debug */,
-				49FEECDB2CEDB893001646EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		49FEECDC2CEDB893001646EF /* Build configuration list for PBXNativeTarget "walkprintUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				49FEECDD2CEDB893001646EF /* Debug */,
-				49FEECDE2CEDB893001646EF /* Release */,
+				497949DE2D0166A200132166 /* Debug */,
+				497949DF2D0166A200132166 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 49FEEC9E2CEDB891001646EF /* Project object */;
+	rootObject = 497949BD2D01669E00132166 /* Project object */;
 }

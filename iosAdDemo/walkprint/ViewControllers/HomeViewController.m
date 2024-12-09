@@ -2,7 +2,7 @@
 //  HomeViewController.m
 //  walkprint
 //
-//  Created by 小柚子 on 2024/11/20.
+//  Created by 小柚子 on 2024/12/5.
 //
 
 #import "HomeViewController.h"
@@ -11,6 +11,8 @@
 #import "SearchImageViewController.h"
 #import "AdsTestViewController.h"
 #import <AppLovinSDK/AppLovinSDK.h>
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/ASIdentifierManager.h>
 @interface HomeViewController ()
 
 @end
@@ -45,10 +47,10 @@
     searchImageButton.frame = CGRectMake(100, 400, self.view.frame.size.width - 200, 50);
     [self.view addSubview:searchImageButton];
     
-//    // Ads test Button
-//    UIButton *testAdsButton = [self createButtonWithTitle:@"广告测试" action:@selector(goToTestAds)];
-//    testAdsButton.frame = CGRectMake(100, 500, self.view.frame.size.width - 200, 50);
-//    [self.view addSubview:testAdsButton];
+    // Ads test Button
+    UIButton *testAdsButton = [self createButtonWithTitle:@"广告测试" action:@selector(goToTestAds)];
+    testAdsButton.frame = CGRectMake(100, 600, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:testAdsButton];
     
     // Integration Check Button
     UIButton *checkButton = [self createButtonWithTitle:@"集成检查" action:@selector(goToCheck)];
