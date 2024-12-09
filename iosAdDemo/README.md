@@ -1,11 +1,27 @@
 # 0. 前置
-
+20241209
 以下是Coolplay广告SDK集成文档，请我们客户的开发人员参考此文档集成。同时开发人员在启动适配前，请通过商务先告知我方App的包名，我们将为该App提供集成广告所需的如下ID、sdkKey、apiKey、nativeId、mrecId和bannerId等，如果需要更多广告类型，也请通过商务联系我们。
 
 # 1. 下载最新SDK
 
 https://developers.applovin.com/en/max/ios/overview/manual-integration/
 
+使用pod 安装sdk：
+/*
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.0'
+
+target 'walkprint' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for walkprint
+  pod 'AppLovinMediationGoogleAdapter'
+  pod 'AppLovinSDK'
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'GoogleUserMessagingPlatform'
+end
+*/
 # 2. AppDelegate
 
 ```
