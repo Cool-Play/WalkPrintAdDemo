@@ -5,6 +5,7 @@
 ## User settings
 xcuserdata/
 
+*.xcuserstate
 ## Obj-C/Swift specific
 *.hmap
 
@@ -44,4 +45,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 # Ignore Xcode User Interface state files
-*.xcuserstate
+
