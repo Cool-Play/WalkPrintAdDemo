@@ -1,0 +1,6 @@
+framework module Pods_walkprint {
+  umbrella header "Pods-walkprint-umbrella.h"
+
+  export *
+  module * { export * }
+}
