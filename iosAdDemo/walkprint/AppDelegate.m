@@ -35,16 +35,13 @@
         {
             builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];//上线前需要注释掉这段代码
         }
-    //      builder.segmentCollection = [MASegmentCollection segmentCollectionWithBuilderBlock:^(MASegmentCollectionBuilder *builder) {
-    //          [builder addSegment: [[MASegment alloc] initWithKey: @(849) values: @[@(1), @(3)]]];
-    //      }];
     }];
 
 
     // Configure the SDK settings if needed before or after SDK initialization.
     ALSdkSettings *settings = [ALSdk shared].settings;
-    settings.userIdentifier = @"«user-ID»";
-    [settings setExtraParameterForKey: @"uid2_token" value: @"«token-value»"];
+//    settings.userIdentifier = @"«user-ID»";
+//    [settings setExtraParameterForKey: @"uid2_token" value: @"«token-value»"];
 
     // Note: you may also set these values in your Info.plist
     settings.termsAndPrivacyPolicyFlowSettings.enabled = YES;
