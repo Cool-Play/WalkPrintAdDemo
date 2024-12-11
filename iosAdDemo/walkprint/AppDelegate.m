@@ -20,9 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //ad mob
-    [GADMobileAds.sharedInstance startWithCompletionHandler:nil];
-    [self checkoutIDFA];
     [ALPrivacySettings setHasUserConsent: YES];
     // 获取 Info.plist 中的配置项
     NSString * SDK_KEY = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"SDK_KEY"];
@@ -33,7 +30,7 @@
         NSString *currentIDFV = UIDevice.currentDevice.identifierForVendor.UUIDString;
         if ( currentIDFV.length > 0 )
         {
-            builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];//上线前需要注释掉这段代码
+//            builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];//上线前需要注释掉这段代码
         }
     }];
 
