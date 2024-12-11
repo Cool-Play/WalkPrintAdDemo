@@ -1,6 +1,15 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AppLovinMediationBigoAdsAdapter
+
+
+Copyright 2024 AppLovin Corp. All rights reserved.
+
+The AppLovin MAX SDK is available under a commercial license (https://www.applovin.com/eula).
+
+
+
 ## AppLovinMediationGoogleAdapter
 
 
