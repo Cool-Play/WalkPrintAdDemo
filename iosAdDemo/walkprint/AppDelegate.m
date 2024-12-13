@@ -30,7 +30,7 @@
         NSString *currentIDFV = UIDevice.currentDevice.identifierForVendor.UUIDString;
         if ( currentIDFV.length > 0 )
         {
-//            builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];//上线前需要注释掉这段代码
+            builder.testDeviceAdvertisingIdentifiers = @[currentIDFV];//上线前需要注释掉这段代码
         }
     }];
 

@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-walkprint/Pods-walkprint-resources.sh
+${PODS_ROOT}/Ads-Global/SDK/PAGAdSDK.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Ads-Global/AdsGlobalSDK.bundle
 ${PODS_ROOT}/BigoADS/BigoADS/BigoADSRes.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/BigoADS/BigoADS.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle
