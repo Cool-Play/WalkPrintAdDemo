@@ -1,13 +1,25 @@
 PODS:
+  - Ads-Global (6.4.0.6):
+    - Ads-Global/BUAdSDK (= 6.4.0.6)
+  - Ads-Global/BUAdSDK (6.4.0.6)
+  - AppLovinMediationBigoAdsAdapter (4.6.0.0):
+    - AppLovinSDK (>= 12.4.1)
+    - BigoADS (= 4.6.0)
+  - AppLovinMediationByteDanceAdapter (6.4.0.6.0):
+    - Ads-Global (= 6.4.0.6)
+    - AppLovinSDK (>= 13.0.0)
   - AppLovinMediationGoogleAdapter (11.13.0.0):
     - AppLovinSDK (>= 13.0.0)
     - Google-Mobile-Ads-SDK (= 11.13.0)
   - AppLovinSDK (13.0.1)
+  - BigoADS (4.6.0)
   - Google-Mobile-Ads-SDK (11.13.0):
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleUserMessagingPlatform (2.7.0)
 
 DEPENDENCIES:
+  - AppLovinMediationBigoAdsAdapter
+  - AppLovinMediationByteDanceAdapter
   - AppLovinMediationGoogleAdapter
   - AppLovinSDK
   - Google-Mobile-Ads-SDK
@@ -15,17 +27,25 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Ads-Global
+    - AppLovinMediationBigoAdsAdapter
+    - AppLovinMediationByteDanceAdapter
     - AppLovinMediationGoogleAdapter
     - AppLovinSDK
+    - BigoADS
     - Google-Mobile-Ads-SDK
     - GoogleUserMessagingPlatform
 
 SPEC CHECKSUMS:
+  Ads-Global: d5c88331f0424e7ccb523e55364651072bd2a041
+  AppLovinMediationBigoAdsAdapter: 9250d5fb076255188d9550529f07b4994bdc76e0
+  AppLovinMediationByteDanceAdapter: b8dd5018b50c9d753e49788784fdbcac2e336789
   AppLovinMediationGoogleAdapter: c1e96c5e92ab7097fc4592410e76ba549be7c581
   AppLovinSDK: fdae6a4361c9c9b09f8d7d18ede792368221d987
+  BigoADS: c4d9ec9cf6d3346843e126cdba111647ec402d9b
   Google-Mobile-Ads-SDK: 14f57f2dc33532a24db288897e26494640810407
   GoogleUserMessagingPlatform: a8b56893477f67212fbc8411c139e61d463349f5
 
-PODFILE CHECKSUM: e64ba17e1463b93614ecf1ca35342a2f4233e24e
+PODFILE CHECKSUM: 55e308d980e9cb2510b34ddd28ad255efaf7cf07
 
 COCOAPODS: 1.16.2

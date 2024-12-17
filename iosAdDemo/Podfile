@@ -10,4 +10,6 @@ target 'walkprint' do
   pod 'AppLovinSDK'
   pod 'Google-Mobile-Ads-SDK'
   pod 'GoogleUserMessagingPlatform'
+  pod 'AppLovinMediationBigoAdsAdapter'
+  pod 'AppLovinMediationByteDanceAdapter'
 end
