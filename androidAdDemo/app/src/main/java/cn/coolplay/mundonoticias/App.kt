@@ -37,7 +37,7 @@ class App : Application() {
             val currentGaid = AdvertisingIdClient.getAdvertisingIdInfo(this).id
             if (currentGaid != null) {
                 Log.i("Applovin", "currentGaid: $currentGaid")
-//                initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
+                initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
             }
 
             val initConfig = initConfigBuilder.build()

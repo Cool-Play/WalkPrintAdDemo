@@ -5,7 +5,8 @@
 # 1. 配置仓库地址
 
 repositories {
-mavenCentral()
+  maven { url 'https://artifacts.applovin.com/android' }
+  maven { url "https://artifact.bytedance.com/repository/pangle" }
 }
 
 # 2. App's build.gradle 增加依赖包
@@ -19,6 +20,9 @@ dependencies {
     implementation 'com.adjust.sdk:adjust-android:4.28.7'
     //google
     implementation 'com.applovin.mediation:google-adapter:23.5.0.0
+    implementation 'com.applovin.mediation:bigoads-adapter:5.1.0.0'
+
+    implementation 'com.applovin.mediation:bytedance-adapter:6.4.0.2.0'
 }
 ```
 

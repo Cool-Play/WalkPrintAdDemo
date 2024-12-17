@@ -4,6 +4,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         maven { url 'https://artifacts.applovin.com/android' }
+        maven { url "https://artifact.bytedance.com/repository/pangle" }
 
     }
 }
@@ -13,6 +14,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://artifacts.applovin.com/android' }
+        maven { url "https://artifact.bytedance.com/repository/pangle" }
 
         maven {
             url = uri("../seattleTvSdkInternal/local/seattleTvSdk")
