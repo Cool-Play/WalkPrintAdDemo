@@ -12,4 +12,5 @@ target 'walkprint' do
   pod 'GoogleUserMessagingPlatform'
   pod 'AppLovinMediationBigoAdsAdapter'
   pod 'AppLovinMediationByteDanceAdapter'
+  pod 'AppLovinMediationMintegralAdapter'
 end

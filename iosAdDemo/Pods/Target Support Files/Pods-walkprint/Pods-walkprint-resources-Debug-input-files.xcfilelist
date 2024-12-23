@@ -5,3 +5,4 @@ ${PODS_ROOT}/BigoADS/BigoADS/BigoADSRes.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/BigoADS/BigoADS.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/UserMessagingPlatformResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/MintegralAdSDK/MTGSDK.bundle

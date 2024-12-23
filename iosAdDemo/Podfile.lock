@@ -11,16 +11,61 @@ PODS:
   - AppLovinMediationGoogleAdapter (11.13.0.0):
     - AppLovinSDK (>= 13.0.0)
     - Google-Mobile-Ads-SDK (= 11.13.0)
+  - AppLovinMediationMintegralAdapter (7.7.3.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - MintegralAdSDK (= 7.7.3)
+    - MintegralAdSDK/BidSplashAd (= 7.7.3)
   - AppLovinSDK (13.0.1)
   - BigoADS (4.6.0)
   - Google-Mobile-Ads-SDK (11.13.0):
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleUserMessagingPlatform (2.7.0)
+  - MintegralAdSDK (7.7.3):
+    - MintegralAdSDK/BannerAd (= 7.7.3)
+    - MintegralAdSDK/BidBannerAd (= 7.7.3)
+    - MintegralAdSDK/BidInterstitialVideoAd (= 7.7.3)
+    - MintegralAdSDK/BidNativeAd (= 7.7.3)
+    - MintegralAdSDK/BidNewInterstitialAd (= 7.7.3)
+    - MintegralAdSDK/BidRewardVideoAd (= 7.7.3)
+    - MintegralAdSDK/InterstitialVideoAd (= 7.7.3)
+    - MintegralAdSDK/NativeAd (= 7.7.3)
+    - MintegralAdSDK/NewInterstitialAd (= 7.7.3)
+    - MintegralAdSDK/RewardVideoAd (= 7.7.3)
+  - MintegralAdSDK/BannerAd (7.7.3):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidBannerAd (7.7.3):
+    - MintegralAdSDK/BannerAd
+    - MintegralAdSDK/BidNativeAd
+  - MintegralAdSDK/BidInterstitialVideoAd (7.7.3):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/InterstitialVideoAd
+  - MintegralAdSDK/BidNativeAd (7.7.3):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidNewInterstitialAd (7.7.3):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/NewInterstitialAd
+  - MintegralAdSDK/BidRewardVideoAd (7.7.3):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/RewardVideoAd
+  - MintegralAdSDK/BidSplashAd (7.7.3):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/SplashAd
+  - MintegralAdSDK/InterstitialVideoAd (7.7.3):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NativeAd (7.7.3)
+  - MintegralAdSDK/NewInterstitialAd (7.7.3):
+    - MintegralAdSDK/InterstitialVideoAd
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/RewardVideoAd (7.7.3):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/SplashAd (7.7.3):
+    - MintegralAdSDK/NativeAd
 
 DEPENDENCIES:
   - AppLovinMediationBigoAdsAdapter
   - AppLovinMediationByteDanceAdapter
   - AppLovinMediationGoogleAdapter
+  - AppLovinMediationMintegralAdapter
   - AppLovinSDK
   - Google-Mobile-Ads-SDK
   - GoogleUserMessagingPlatform
@@ -31,21 +76,25 @@ SPEC REPOS:
     - AppLovinMediationBigoAdsAdapter
     - AppLovinMediationByteDanceAdapter
     - AppLovinMediationGoogleAdapter
+    - AppLovinMediationMintegralAdapter
     - AppLovinSDK
     - BigoADS
     - Google-Mobile-Ads-SDK
     - GoogleUserMessagingPlatform
+    - MintegralAdSDK
 
 SPEC CHECKSUMS:
   Ads-Global: d5c88331f0424e7ccb523e55364651072bd2a041
   AppLovinMediationBigoAdsAdapter: 9250d5fb076255188d9550529f07b4994bdc76e0
   AppLovinMediationByteDanceAdapter: b8dd5018b50c9d753e49788784fdbcac2e336789
   AppLovinMediationGoogleAdapter: c1e96c5e92ab7097fc4592410e76ba549be7c581
+  AppLovinMediationMintegralAdapter: 97d210078a2de1d2f5c922346010ab844e046271
   AppLovinSDK: fdae6a4361c9c9b09f8d7d18ede792368221d987
   BigoADS: c4d9ec9cf6d3346843e126cdba111647ec402d9b
   Google-Mobile-Ads-SDK: 14f57f2dc33532a24db288897e26494640810407
   GoogleUserMessagingPlatform: a8b56893477f67212fbc8411c139e61d463349f5
+  MintegralAdSDK: 217cca20529055c8791c82985dd7a74864e49fd0
 
-PODFILE CHECKSUM: 55e308d980e9cb2510b34ddd28ad255efaf7cf07
+PODFILE CHECKSUM: 60205045ddaa227fb4191ca155454098d3a47070
 
 COCOAPODS: 1.16.2
