@@ -6,6 +6,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import cn.coolplay.mundonoticias.adPreLoad.AdPreLoadView
 import com.adjust.sdk.Adjust
 import com.adjust.sdk.AdjustConfig
 import com.applovin.sdk.AppLovinMediationProvider
@@ -17,6 +18,8 @@ import java.util.concurrent.Executors
 
 
 class App : Application() {
+
+
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
@@ -58,6 +61,8 @@ class App : Application() {
 //                        AdjustConfig(this@App, "{YourAppToken}", AdjustConfig.ENVIRONMENT_SANDBOX)
 //                    Adjust.onCreate(config)
 //                    registerActivityLifecycleCallbacks(AdjustLifecycleCallbacks())
+                    //与加载广告
+                    AdPreLoadView.loadAdView(this@App)
                 }
             }
             executor.shutdown()

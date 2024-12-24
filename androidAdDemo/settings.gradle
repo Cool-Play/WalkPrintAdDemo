@@ -5,6 +5,7 @@ pluginManagement {
         gradlePluginPortal()
         maven { url 'https://artifacts.applovin.com/android' }
         maven { url "https://artifact.bytedance.com/repository/pangle" }
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
 
     }
 }
@@ -15,6 +16,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url 'https://artifacts.applovin.com/android' }
         maven { url "https://artifact.bytedance.com/repository/pangle" }
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
 
         maven {
             url = uri("../seattleTvSdkInternal/local/seattleTvSdk")

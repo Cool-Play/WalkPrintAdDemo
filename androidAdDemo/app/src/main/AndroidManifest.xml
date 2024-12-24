@@ -16,13 +16,13 @@
         android:name=".App"
         android:allowBackup="true"
         android:banner="@mipmap/ic_launcher"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.BsLauncher">
+        android:theme="@style/Theme.BsLauncher"
+        android:usesCleartextTraffic="true">
         <meta-data
             android:name="applovin.sdk.verbose_logging"
             android:value="true" />
@@ -32,35 +32,45 @@
 
         <activity
             android:name=".MaxSearchActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BsLauncher"
-            android:exported="true" />
+            android:theme="@style/Theme.BsLauncher" />
+        <activity
+            android:name=".adPreLoad.MaxPreSearchActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxSearchResultActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BsLauncher"
-            android:exported="true" />
+            android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxMainActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BsLauncher"
-            android:exported="true" />
+            android:theme="@style/Theme.BsLauncher" />
+        <activity
+            android:name=".adPreLoad.MaxAdPreDrawActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxAdDrawActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BsLauncher"
-            android:exported="true" />
+            android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxWorkPrintActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BsLauncher"
-            android:exported="true" />
+            android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxSplashActivity"
+            android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.BsLauncher"
-            android:exported="true">
+            android:theme="@style/Theme.BsLauncher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
