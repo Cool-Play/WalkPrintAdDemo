@@ -33,49 +33,53 @@
         <activity
             android:name=".MaxSearchActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".adPreLoad.MaxPreSearchActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxSearchResultActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxMainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".adPreLoad.MaxAdPreDrawActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+
+            android:theme="@style/Theme.BsLauncher" />
+        <activity
+            android:name=".RewardActivity"
+            android:exported="true"
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxAdDrawActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxWorkPrintActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".MaxSplashActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
+
             android:theme="@style/Theme.BsLauncher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
 

@@ -49,6 +49,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_work_print" />
 
     <Button
+        android:id="@+id/reward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="激励"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ai_search_pic" />
+
+    <Button
         android:id="@+id/tv_show_debug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,5 +67,6 @@
         android:text="集成检查"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ai_search_pic" />
+        app:layout_constraintTop_toBottomOf="@+id/reward" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

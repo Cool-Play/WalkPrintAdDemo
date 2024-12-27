@@ -31,7 +31,7 @@ class MaxAdPreDrawActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
         tvShow = findViewById(R.id.tv_show)
         aiResult = findViewById(R.id.ai_result)
         adContainer?.post {
-            adView = AdPreLoadView.getAdView("AIDraw")
+            adView = AdPreLoadView.getAdView("AIDraw")?.maxView
             AdPreLoadView.addAdListener("AIDraw", this)
             tvShow?.setOnClickListener {
                 aiResult?.isVisible = false

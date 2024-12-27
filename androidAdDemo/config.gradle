@@ -12,7 +12,8 @@ ext {
             apiKey  : "\"24FTIt6TppUoliRCuhDDcE1vPK9vquU7bnaf63AFWdV22vykLgR3tcSP8Ra6gfRzLVlSpIDEEc0wPRks5IPDOS\"",//ad-review-key»
             mrecId  : "\"a2d8f251d6fa806d\"",
             bannerId: "\"352930c5abf1250b\"",
-            nativeId: "\"00ca9204561d0026\""
+            nativeId: "\"00ca9204561d0026\"",
+            rewardId: "\"93bd8eb54e7cf72f\"",
     ]
     versions = [minSdkVersion    : 21,
                 compileSdkVersion: 34,

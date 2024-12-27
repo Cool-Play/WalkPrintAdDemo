@@ -44,8 +44,8 @@ class MaxPreSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
         searchEdit?.setOnClickListener {
             goSearch()
         }
-        adView = AdPreLoadView.getAdView("SearchBanner")
-        adMrecView = AdPreLoadView.getAdView("SearchMrec")
+        adView = AdPreLoadView.getAdView("SearchBanner")?.maxView
+        adMrecView = AdPreLoadView.getAdView("SearchMrec")?.maxView
         AdPreLoadView.addAdListener("SearchBanner", this)
         AdPreLoadView.addAdListener("SearchMrec", this)
         if (AdPreLoadView.isLoadedAd("SearchBanner")) {

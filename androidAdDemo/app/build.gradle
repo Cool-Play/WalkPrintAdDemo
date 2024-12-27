@@ -38,6 +38,7 @@ android {
             buildConfigField "String", "mrecId", api.mrecId
             buildConfigField "String", "nativeId", api.nativeId
             buildConfigField "String", "bannerId", api.bannerId
+            buildConfigField "String", "rewardId", api.rewardId
             buildConfigField "String", "sdkKey", api.sdkKey
             minifyEnabled false
             signingConfig signingConfigs.release
@@ -47,6 +48,7 @@ android {
             buildConfigField "String", "mrecId", api.mrecId
             buildConfigField "String", "nativeId", api.nativeId
             buildConfigField "String", "bannerId", api.bannerId
+            buildConfigField "String", "rewardId", api.rewardId
             buildConfigField "String", "sdkKey", api.sdkKey
             minifyEnabled false
             signingConfig signingConfigs.release
@@ -92,12 +94,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
     implementation 'com.adjust.sdk:adjust-android:4.28.7'
     //google mediation adapter
-    implementation 'com.applovin.mediation:google-adapter:23.5.0.0'
+    implementation 'com.applovin.mediation:google-adapter:23.6.0.1'
     //隐私协议
     implementation 'com.google.android.ump:user-messaging-platform:3.1.0'
     implementation 'com.applovin.mediation:bigoads-adapter:5.1.0.0'
 
-    implementation 'com.applovin.mediation:bytedance-adapter:6.4.0.2.0'
+    implementation 'com.applovin.mediation:bytedance-adapter:6.4.0.5.0'
 
     implementation 'com.applovin.mediation:mintegral-adapter:16.9.11.0'
 
