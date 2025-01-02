@@ -13,16 +13,19 @@ repositories {
 
 ```
 dependencies {
-  // Applovin
+ // Applovin
     implementation("com.applovin:applovin-sdk:13.0.1")
     implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
-    //统计
     implementation 'com.adjust.sdk:adjust-android:4.28.7'
-    //google
-    implementation 'com.applovin.mediation:google-adapter:23.5.0.0
+    //google mediation adapter
+    implementation 'com.applovin.mediation:google-adapter:23.6.0.1'
+    //隐私协议 不需要ump 可以不添加
+    implementation 'com.google.android.ump:user-messaging-platform:3.1.0'
     implementation 'com.applovin.mediation:bigoads-adapter:5.1.0.0'
 
-    implementation 'com.applovin.mediation:bytedance-adapter:6.4.0.2.0'
+    implementation 'com.applovin.mediation:bytedance-adapter:6.4.0.5.0'
+
+    implementation 'com.applovin.mediation:mintegral-adapter:16.9.11.0'
 }
 ```
 
