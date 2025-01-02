@@ -3,17 +3,18 @@ ext {
     lifecycle_version = '2.3.1'
     archLifecycleVersion = '2.2.0'
     appNamespace = 'cn.coolplay.mundonoticias'
-    appId = 'com.yhk.rabbit.print.walkprint'
+    appId = 'com.Androidxt.tvcast'
+
     ktx = '1.13.1'
     appcompat = '1.7.0'
     material3 = '1.2.1'
     api = [
             sdkKey  : "\"kZUEftzqIi7oaux7mXIcPcqbQJflAXf2TTnUZ05LZru2JP1HPrBTlqOlzvtNDWESCtbTWCZGNyzxT9pDw3OlEm\"",
             apiKey  : "\"24FTIt6TppUoliRCuhDDcE1vPK9vquU7bnaf63AFWdV22vykLgR3tcSP8Ra6gfRzLVlSpIDEEc0wPRks5IPDOS\"",//ad-review-key»
-            mrecId  : "\"a2d8f251d6fa806d\"",
-            bannerId: "\"352930c5abf1250b\"",
-            nativeId: "\"00ca9204561d0026\"",
-            rewardId: "\"93bd8eb54e7cf72f\"",
+            mrecId  : "\"91a565b29950fdf9\"",
+            bannerId: "\"1267f6b844966706\"",
+            nativeId: "\"e9c814d3ecd28049\"",
+            rewardId: "\"411809dee92caf81\"",
     ]
     versions = [minSdkVersion    : 21,
                 compileSdkVersion: 34,
