@@ -21,14 +21,14 @@ class MaxMainActivity : AppCompatActivity(), MaxAdListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_max_main)
         findViewById<Button>(R.id.tv_ai_draw).setOnClickListener {
-            startActivity(Intent(this, MaxAdPreDrawActivity::class.java))
+            startActivity(Intent(this, MaxAdDrawActivity::class.java))
 
         }
         findViewById<Button>(R.id.tv_work_print).setOnClickListener {
             startActivity(Intent(this, MaxWorkPrintActivity::class.java))
         }
         findViewById<Button>(R.id.tv_ai_search_pic).setOnClickListener {
-            startActivity(Intent(this, MaxPreSearchActivity::class.java))
+            startActivity(Intent(this, MaxSearchActivity::class.java))
         }
         findViewById<Button>(R.id.reward).setOnClickListener {
             val adview = AdPreLoadView.getAdView("RewardView")?.maxRewardedAd

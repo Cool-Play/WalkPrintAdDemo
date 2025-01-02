@@ -54,10 +54,7 @@
             android:exported="true"
 
             android:theme="@style/Theme.BsLauncher" />
-        <activity
-            android:name=".RewardActivity"
-            android:exported="true"
-            android:theme="@style/Theme.BsLauncher" />
+
         <activity
             android:name=".MaxAdDrawActivity"
             android:exported="true"

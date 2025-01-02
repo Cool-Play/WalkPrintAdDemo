@@ -26,6 +26,16 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
+        android:id="@+id/tv_ai_pre_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
         android:id="@+id/tv_work_print"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
