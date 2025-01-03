@@ -47,7 +47,6 @@
         <activity
             android:name=".MaxMainActivity"
             android:exported="true"
-            android:screenOrientation="landscape"
             android:theme="@style/Theme.BsLauncher" />
         <activity
             android:name=".adPreLoad.MaxAdPreDrawActivity"

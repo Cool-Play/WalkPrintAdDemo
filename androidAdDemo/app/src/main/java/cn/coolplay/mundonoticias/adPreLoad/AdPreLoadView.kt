@@ -19,12 +19,13 @@ import com.applovin.mediation.ads.MaxAdView
 import com.applovin.mediation.ads.MaxRewardedAd
 import com.applovin.sdk.AppLovinSdkUtils
 import java.util.concurrent.TimeUnit
+import kotlin.math.log
 import kotlin.math.pow
 
 class AdPreLoadViewData(
     val adUnitId: String,
     val tag: String,
-    val isAutoLoad: Boolean = true,
+    val isAutoLoad: Boolean = false,
     var isLoaded: Boolean = false,
     var isDisPlayed: Boolean = false,
     var maxView: MaxAdView? = null,
@@ -34,6 +35,7 @@ class AdPreLoadViewData(
 )
 
 object AdPreLoadView {
+    //这里可以配置预加载 的配置，可以配合生命周期在不同的地方去初始化，这里只是demo 如何去预加载的实现方式
     private val adViewMap = mapOf(
         "AIDraw" to AdPreLoadViewData(
             BuildConfig.mrecId,
@@ -170,10 +172,7 @@ object AdPreLoadView {
             }
         })
         adPreLoadViewData.maxRewardedAd = adView
-        //自动load 才会预加载
-        if (adPreLoadViewData.isAutoLoad) {
-            adView.loadAd()
-        }
+        adView.loadAd()
     }
 
     private fun createBannerView(app: Context, adPreLoadViewData: AdPreLoadViewData) {
@@ -182,6 +181,10 @@ object AdPreLoadView {
         val heightPx = AppLovinSdkUtils.dpToPx(app, heightDp)
         adView.layoutParams = FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, heightPx)
         adView.placement = adPreLoadViewData.tag
+        adView.setExtraParameter("allow_pause_auto_refresh_immediately", "true")
+        if (!adPreLoadViewData.isAutoLoad) {
+            adView.stopAutoRefresh()
+        }
         adView.setListener(object : MaxAdViewAdListener {
             override fun onAdLoaded(ad: MaxAd) {
                 adPreLoadViewData.isLoaded = true
@@ -191,10 +194,19 @@ object AdPreLoadView {
             override fun onAdDisplayed(p0: MaxAd) {
                 adPreLoadViewData.isDisPlayed = true
                 adPreLoadViewData.adListener?.onAdDisplayed(p0)
+                if (!adPreLoadViewData.isAutoLoad) {
+                    Log.e("createBannerView", "开启刷新 onAdDisplayed")
+                    adView.startAutoRefresh()
+                }
             }
 
             override fun onAdHidden(p0: MaxAd) {
                 adPreLoadViewData.isDisPlayed = false
+                if (!adPreLoadViewData.isAutoLoad) {
+                    Log.e("createBannerView", "停止刷新 onAdHidden")
+                    //设置为停止自动刷新
+                    adView.stopAutoRefresh()
+                }
                 adView.loadAd()
             }
 
@@ -204,11 +216,21 @@ object AdPreLoadView {
 
             override fun onAdLoadFailed(p0: String, p1: MaxError) {
                 adPreLoadViewData.isLoaded = false
+                if (!adPreLoadViewData.isAutoLoad) {
+                    //设置为停止自动刷新
+                    Log.e("createBannerView", "停止刷新 onAdLoadFailed")
+                    adView.stopAutoRefresh()
+                }
                 adView.loadAd()
             }
 
             override fun onAdDisplayFailed(p0: MaxAd, p1: MaxError) {
-                adPreLoadViewData.isDisPlayed = false
+                if (!adPreLoadViewData.isAutoLoad) {
+                    //设置为停止自动刷新
+                    Log.e("createBannerView", "停止刷新 onAdDisplayFailed")
+                    adView.stopAutoRefresh()
+                }
+                adView.loadAd()
             }
 
             override fun onAdExpanded(p0: MaxAd) {
@@ -220,16 +242,13 @@ object AdPreLoadView {
             }
         })
         adPreLoadViewData.maxView = adView
-        //自动load 才会预加载
-        if (adPreLoadViewData.isAutoLoad) {
-            adView.loadAd()
-        }
+        adView.loadAd()
     }
 
     private fun createMrecView(app: Context, adPreLoadViewData: AdPreLoadViewData) {
         val adView = MaxAdView(adPreLoadViewData.adUnitId, adPreLoadViewData.adType, app)
+        adView.setExtraParameter("allow_pause_auto_refresh_immediately", "true")
         if (!adPreLoadViewData.isAutoLoad) {
-            adView.setExtraParameter("allow_pause_auto_refresh_immediately", "true")
             adView.stopAutoRefresh()
         }
         adView.placement = adPreLoadViewData.tag
@@ -243,12 +262,21 @@ object AdPreLoadView {
             }
 
             override fun onAdDisplayed(p0: MaxAd) {
+                if (!adPreLoadViewData.isAutoLoad) {
+                    Log.e("createMrecView", "开启刷新 onAdDisplayed")
+                    adView.startAutoRefresh()
+                }
                 adPreLoadViewData.isDisPlayed = true
                 adPreLoadViewData.adListener?.onAdDisplayed(p0)
             }
 
             override fun onAdHidden(p0: MaxAd) {
                 adPreLoadViewData.isDisPlayed = false
+                if (!adPreLoadViewData.isAutoLoad) {
+                    //设置为停止自动刷新
+                    Log.e("createMrecView", "停止刷新 onAdHidden")
+                    adView.stopAutoRefresh()
+                }
                 adView.loadAd()
             }
 
@@ -257,12 +285,24 @@ object AdPreLoadView {
             }
 
             override fun onAdLoadFailed(p0: String, p1: MaxError) {
+                adPreLoadViewData.isLoaded = false
                 adPreLoadViewData.isDisPlayed = false
+                if (!adPreLoadViewData.isAutoLoad) {
+                    //设置为停止自动刷新
+                    Log.e("createMrecView", "停止刷新 onAdLoadFailed")
+                    adView.stopAutoRefresh()
+                }
                 adView.loadAd()
             }
 
             override fun onAdDisplayFailed(p0: MaxAd, p1: MaxError) {
                 adPreLoadViewData.isDisPlayed = false
+                if (!adPreLoadViewData.isAutoLoad) {
+                    //设置为停止自动刷新
+                    Log.e("createMrecView", "停止刷新 onAdDisplayFailed")
+                    adView.stopAutoRefresh()
+                }
+                adView.loadAd()
             }
 
             override fun onAdExpanded(p0: MaxAd) {
@@ -274,10 +314,7 @@ object AdPreLoadView {
             }
         })
         adPreLoadViewData.maxView = adView
-        //自动load 才会预加载
-        if (adPreLoadViewData.isAutoLoad) {
-            adView.loadAd()
-        }
+        adView.loadAd()
     }
 
     fun onDestroyView(isExit: Boolean = false) {

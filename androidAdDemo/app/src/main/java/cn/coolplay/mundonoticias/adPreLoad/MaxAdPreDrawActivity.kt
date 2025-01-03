@@ -30,26 +30,24 @@ class MaxAdPreDrawActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
 
         tvShow = findViewById(R.id.tv_show)
         aiResult = findViewById(R.id.ai_result)
-        adContainer?.post {
-            adView = AdPreLoadView.getAdView("AIDraw")?.maxView
-            AdPreLoadView.addAdListener("AIDraw", this)
-            tvShow?.setOnClickListener {
-                aiResult?.isVisible = false
-                //如果已经加载后 直接显示 否则等待 加载完成显示
-                if (AdPreLoadView.isLoadedAd("AIDraw")) {
-                    Log.e("MaxAdPreDrawActivity", "AIDraw 已经加载成功")
-                    if (adView?.parent == null) {
-                        adContainer?.addView(adView)
-                    }
+        adView = AdPreLoadView.getAdView("AIDraw")?.maxView
+        AdPreLoadView.addAdListener("AIDraw", this)
+        tvShow?.setOnClickListener {
+            aiResult?.isVisible = false
+            //如果已经加载后 直接显示 否则等待 加载完成显示
+            if (AdPreLoadView.isLoadedAd("AIDraw")) {
+                Log.e("MaxAdPreDrawActivity", "AIDraw 已经加载成功")
+                if (adView?.parent == null) {
+                    adContainer?.addView(adView)
+                }
 
-                    if (adView?.isVisible == false) {
-                        adView?.isVisible = true
-                        tvShow?.postDelayed({
-                            adView?.isInvisible = true
-                            aiResult?.isVisible = true
-                            aiResult?.load(R.mipmap.xiaogou)
-                        }, 10000)
-                    }
+                if (adView?.isVisible == false) {
+                    adView?.isVisible = true
+                    tvShow?.postDelayed({
+                        adView?.isInvisible = true
+                        aiResult?.isVisible = true
+                        aiResult?.load(R.mipmap.xiaogou)
+                    }, 10000)
                 }
             }
 
@@ -79,6 +77,7 @@ class MaxAdPreDrawActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
     override fun onAdDisplayed(p0: MaxAd) {
         Log.e("MaxAdPreDrawActivity", "显现成功")
         tvShow?.postDelayed({
+            adView?.stopAutoRefresh()
             adView?.isInvisible = true
             aiResult?.isVisible = true
             aiResult?.load(R.mipmap.xiaogou)
@@ -94,11 +93,9 @@ class MaxAdPreDrawActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
     }
 
     override fun onAdLoadFailed(p0: String, p1: MaxError) {
-        adView?.loadAd()
     }
 
     override fun onAdDisplayFailed(p0: MaxAd, p1: MaxError) {
-        adView?.loadAd()
     }
 
     override fun onAdExpanded(p0: MaxAd) {
@@ -109,13 +106,6 @@ class MaxAdPreDrawActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
     }
 
     override fun onAdRevenuePaid(ad: MaxAd) {
-//        val adjustAdRevenue = AdjustAdRevenue(AdjustConfig.AD_REVENUE_APPLOVIN_MAX)
-//        adjustAdRevenue.setRevenue(ad.revenue, "USD")
-//        adjustAdRevenue.setAdRevenueNetwork(ad.networkName)
-//        adjustAdRevenue.setAdRevenueUnit(ad.adUnitId)
-//        adjustAdRevenue.setAdRevenuePlacement(ad.placement)
-//
-//        Adjust.trackAdRevenue(adjustAdRevenue)
     }
 
 }

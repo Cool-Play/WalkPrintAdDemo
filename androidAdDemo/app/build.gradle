@@ -39,6 +39,7 @@ android {
             buildConfigField "String", "nativeId", api.nativeId
             buildConfigField "String", "bannerId", api.bannerId
             buildConfigField "String", "rewardId", api.rewardId
+            buildConfigField "String", "splashId", api.splashId
             buildConfigField "String", "sdkKey", api.sdkKey
             minifyEnabled false
             signingConfig signingConfigs.release
@@ -49,6 +50,7 @@ android {
             buildConfigField "String", "nativeId", api.nativeId
             buildConfigField "String", "bannerId", api.bannerId
             buildConfigField "String", "rewardId", api.rewardId
+            buildConfigField "String", "splashId", api.splashId
             buildConfigField "String", "sdkKey", api.sdkKey
             minifyEnabled false
             signingConfig signingConfigs.release
@@ -105,5 +107,6 @@ dependencies {
 
     implementation 'io.coil-kt:coil:2.6.0' // 目前最新是2.4.0
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.lifecycle:lifecycle-process:2.8.7'
 
 }

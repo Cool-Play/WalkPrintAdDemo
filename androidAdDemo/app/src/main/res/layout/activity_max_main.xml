@@ -26,14 +26,14 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
-        android:id="@+id/tv_ai_pre_load"
+        android:id="@+id/tv_ai_pre_draw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:text="AI绘图预加载"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ai_draw" />
 
     <Button
         android:id="@+id/tv_work_print"
@@ -44,7 +44,7 @@
         android:text="网页打印"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ai_draw" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ai_pre_draw" />
 
 
     <Button
@@ -59,6 +59,17 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_work_print" />
 
     <Button
+        android:id="@+id/tv_ai_search_pic_pre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="搜图预加载"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ai_search_pic" />
+
+    <Button
         android:id="@+id/reward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,7 +77,7 @@
         android:text="激励"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ai_search_pic" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ai_search_pic_pre" />
 
     <Button
         android:id="@+id/tv_show_debug"

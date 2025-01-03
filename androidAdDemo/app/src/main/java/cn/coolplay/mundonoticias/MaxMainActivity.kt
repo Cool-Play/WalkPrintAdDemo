@@ -24,6 +24,16 @@ class MaxMainActivity : AppCompatActivity(), MaxAdListener {
             startActivity(Intent(this, MaxAdDrawActivity::class.java))
 
         }
+        // 预加载广告  这里只是做了预加载 实现方式 不是必须的。开发中可参考自我实现
+        findViewById<Button>(R.id.tv_ai_pre_draw).setOnClickListener {
+            startActivity(Intent(this, MaxAdPreDrawActivity::class.java))
+
+        }
+        // 预加载广告  这里只是做了预加载 实现方式 不是必须的。开发中可参考自我实现
+        findViewById<Button>(R.id.tv_ai_search_pic_pre).setOnClickListener {
+            startActivity(Intent(this, MaxPreSearchActivity::class.java))
+
+        }
         findViewById<Button>(R.id.tv_work_print).setOnClickListener {
             startActivity(Intent(this, MaxWorkPrintActivity::class.java))
         }
