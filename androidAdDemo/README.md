@@ -4,10 +4,13 @@
 
 # 1. 配置仓库地址
 
+```
 repositories {
-maven { url 'https://artifacts.applovin.com/android' }
-maven { url "https://artifact.bytedance.com/repository/pangle" }
+  maven { url 'https://artifacts.applovin.com/android' }
+  maven { url "https://artifact.bytedance.com/repository/pangle" }
+  maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
 }
+```
 
 # 2. App's build.gradle 增加依赖包
 
