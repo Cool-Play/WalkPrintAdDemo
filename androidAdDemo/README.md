@@ -1,6 +1,6 @@
 # 0. 前置
 
-以下是Coolplay广告SDK集成文档，请我们客户的开发人员参考此文档集成。同时开发人员在启动适配前，请通过商务先告知我方App的包名，我们将为该App提供集成广告所需的如下ID、sdkKey、apiKey、nativeId、mrecId和bannerId等，如果需要更多广告类型，也请通过商务联系我们。
+以下是Coolplay广告SDK集成文档，请我们客户的开发人员参考此文档集成。同时开发人员在启动适配前，请通过商务先告知我方App的包名，我们将为该App提供集成广告所需的如下ID、sdkKey、apiKey、nativeId、splashId,mrecId和bannerId等，如果需要更多广告类型，也请通过商务联系我们。
 
 # 1. 配置仓库地址
 
@@ -283,7 +283,104 @@ class MaxSearchResultActivity : AppCompatActivity(), MaxAdViewAdListener {
 }
 ```
 
-# 8. 隐私合规
+# 8. 开屏 广告
+
+```
+开屏广告管理也可以自己定义管理
+class AppOpenManager(private var applicationContext: Context) : DefaultLifecycleObserver,
+    MaxAdListener {
+    // 开屏广告初始化
+    private var appOpenAd: MaxAppOpenAd = MaxAppOpenAd("这里是开屏广告的id", applicationContext)
+    private var cActivity: MaxSplashActivity? = null
+
+    init {
+        appOpenAd.setListener(this)
+        appOpenAd.loadAd()
+    }
+
+    private fun showAdIfReady() {
+        if (!AppLovinSdk.getInstance(applicationContext).isInitialized) return
+        if (appOpenAd.isReady) {
+            appOpenAd.showAd("splash")
+        } else {
+            appOpenAd.loadAd()
+        }
+    }
+
+    override fun onStart(owner: LifecycleOwner) {
+        super.onStart(owner)
+        Log.e("AppOpenManager", "splash onStart ${owner is MaxSplashActivity}")
+        if (owner is MaxSplashActivity) {
+            cActivity = owner
+            showAdIfReady()
+        }
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
+        appOpenAd.destroy()
+        cActivity?.lifecycle?.removeObserver(this)
+        cActivity = null
+    }
+
+    override fun onAdLoaded(ad: MaxAd) {
+        Log.e("AppOpenManager", "splash 加载成功 $cActivity")
+        cActivity?.also {
+            showAdIfReady()
+        }
+    }
+
+    override fun onAdLoadFailed(adUnitId: String, error: MaxError) {
+        appOpenAd.loadAd()
+        cActivity?.goMain()
+    }
+
+    override fun onAdDisplayed(ad: MaxAd) {
+        Log.e("AppOpenManager", "splash 展示成功")
+        cActivity?.cancelTimer()
+    }
+
+    override fun onAdClicked(ad: MaxAd) {}
+
+    override fun onAdHidden(ad: MaxAd) {
+        appOpenAd.loadAd()
+        cActivity?.goMain()
+    }
+
+    override fun onAdDisplayFailed(ad: MaxAd, error: MaxError) {
+        appOpenAd.loadAd()
+        cActivity?.goMain()
+    }
+}
+
+class MaxSplashActivity : AppCompatActivity() {
+    private val timeRunner = Runnable {
+        goMain()
+    }
+    var adContainer: FrameLayout? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.splash)
+        adContainer = findViewById(R.id.adContainer)
+        //AppOpenManager 开屏广告初始化 
+        val openManager = AppOpenManager(this)
+        //添加生命周期监听
+        lifecycle.addObserver(openManager)
+        adContainer?.postDelayed(timeRunner, 5000)
+    }
+
+    fun cancelTimer() {
+        adContainer?.removeCallbacks(timeRunner)
+    }
+
+    fun goMain() {
+        startActivity(Intent(this, MaxMainActivity::class.java))
+        finish()
+    }
+}
+```
+
+# 9. 隐私合规
 
 隐私合规具体规范请参照 https://developers.applovin.com/en/max/android/overview/privacy/
 
