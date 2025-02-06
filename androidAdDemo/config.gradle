@@ -3,7 +3,9 @@ ext {
     lifecycle_version = '2.3.1'
     archLifecycleVersion = '2.2.0'
     appNamespace = 'cn.coolplay.mundonoticias'
-    appId = 'com.Androidxt.tvcast'
+//    appId = 'com.Androidxt.tvcast'
+    appId = 'cn.androidxt.tvcast'
+
 
     ktx = '1.13.1'
     appcompat = '1.7.0'
@@ -11,11 +13,16 @@ ext {
     api = [
             sdkKey  : "\"kZUEftzqIi7oaux7mXIcPcqbQJflAXf2TTnUZ05LZru2JP1HPrBTlqOlzvtNDWESCtbTWCZGNyzxT9pDw3OlEm\"",
             apiKey  : "\"24FTIt6TppUoliRCuhDDcE1vPK9vquU7bnaf63AFWdV22vykLgR3tcSP8Ra6gfRzLVlSpIDEEc0wPRks5IPDOS\"",//ad-review-key»
-            mrecId  : "\"91a565b29950fdf9\"",
-            bannerId: "\"1267f6b844966706\"",
-            nativeId: "\"e9c814d3ecd28049\"",
-            rewardId: "\"411809dee92caf81\"",
-            splashId: "\"ed5620f5c5b36ec2\"",
+//            mrecId  : "\"91a565b29950fdf9\"",
+//            bannerId: "\"1267f6b844966706\"",
+//            nativeId: "\"e9c814d3ecd28049\"",
+//            rewardId: "\"411809dee92caf81\"",
+//            splashId: "\"ed5620f5c5b36ec2\"",
+            mrecId  : "\"4b9808253bf1eddb\"",
+            bannerId: "\"cd3754c4ce95baaf\"",
+            nativeId: "\"b6cf698bb934f77f\"",
+            rewardId: "\"3895e69a05028d99\"",
+            splashId: "\"4ba345fd3d8ac9b3\"",
 
     ]
     versions = [minSdkVersion    : 21,
