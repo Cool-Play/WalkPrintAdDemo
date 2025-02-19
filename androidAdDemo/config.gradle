@@ -17,6 +17,7 @@ ext {
             nativeId: "\"7461a73622e27848\"",
             rewardId: "\"7c17ac290ce9610b\"",
             splashId: "\"74e6a804e338e309\"",
+            interstitialId: "\"33f70597330b3903\""
 
     ]
     versions = [minSdkVersion    : 21,

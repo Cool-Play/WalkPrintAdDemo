@@ -4,28 +4,20 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.ViewGroup.LayoutParams
-import android.widget.EditText
 import android.widget.FrameLayout
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import cn.coolplay.mundonoticias.BuildConfig
-import cn.coolplay.mundonoticias.MaxSearchResultActivity
+import cn.coolplay.mundonoticias.MaxNativeActivity
 import cn.coolplay.mundonoticias.R
-import com.adjust.sdk.Adjust
-import com.adjust.sdk.AdjustAdRevenue
-import com.adjust.sdk.AdjustConfig
 import com.applovin.mediation.MaxAd
-import com.applovin.mediation.MaxAdFormat
 import com.applovin.mediation.MaxAdRevenueListener
 import com.applovin.mediation.MaxAdViewAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
-import com.applovin.sdk.AppLovinSdkUtils
 
 
-class MaxPreSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
+class MaxPreBannerActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
 
     private var adContainer: FrameLayout? = null
     private var adMrecContainer: FrameLayout? = null
@@ -49,13 +41,13 @@ class MaxPreSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
         AdPreLoadView.addAdListener("SearchBanner", this)
         AdPreLoadView.addAdListener("SearchMrec", this)
         if (AdPreLoadView.isLoadedAd("SearchBanner")) {
-            Log.e("'MaxPreSearchActivity'", "SearchBanner 已经加载成功")
+            Log.e("'MaxPreBannerActivity'", "SearchBanner 已经加载成功")
             if (adView?.parent == null) {
                 adContainer?.addView(adView)
             }
         }
         if (AdPreLoadView.isLoadedAd("SearchMrec")) {
-            Log.e("MaxPreSearchActivity", "SearchMrec已经加载成功")
+            Log.e("MaxPreBannerActivity", "SearchMrec已经加载成功")
             if (adMrecView?.parent == null) {
                 adMrecContainer?.addView(adMrecView)
             }
@@ -63,7 +55,7 @@ class MaxPreSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdReve
     }
 
     private fun goSearch() {
-        startActivity(Intent(this, MaxSearchResultActivity::class.java))
+        startActivity(Intent(this, MaxNativeActivity::class.java))
     }
 
     // 消亡banner广告，

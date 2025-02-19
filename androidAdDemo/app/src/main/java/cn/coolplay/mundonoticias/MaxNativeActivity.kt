@@ -32,7 +32,7 @@ import com.applovin.mediation.nativeAds.adPlacer.MaxRecyclerAdapter
 import com.applovin.sdk.AppLovinSdkUtils
 import kotlin.random.Random
 
-class MaxSearchResultActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
+class MaxNativeActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
 
     private val sampleData = arrayListOf<Int>()
     private lateinit var adAdapter: MaxRecyclerAdapter

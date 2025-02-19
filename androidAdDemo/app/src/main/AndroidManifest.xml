@@ -31,17 +31,17 @@
             android:value="ca-app-pub-2540674760491959~9832388524" />
 
         <activity
-            android:name=".MaxSearchActivity"
+            android:name=".MaxBannerActivity"
             android:exported="true"
 
             android:theme="@style/Theme.BsLauncher" />
         <activity
-            android:name=".adPreLoad.MaxPreSearchActivity"
+            android:name=".adPreLoad.MaxPreBannerActivity"
             android:exported="true"
 
             android:theme="@style/Theme.BsLauncher" />
         <activity
-            android:name=".MaxSearchResultActivity"
+            android:name=".MaxNativeActivity"
             android:exported="true"
             android:theme="@style/Theme.BsLauncher" />
         <activity
@@ -49,13 +49,13 @@
             android:exported="true"
             android:theme="@style/Theme.BsLauncher" />
         <activity
-            android:name=".adPreLoad.MaxAdPreDrawActivity"
+            android:name=".adPreLoad.MaxAdPreMrecActivity"
             android:exported="true"
 
             android:theme="@style/Theme.BsLauncher" />
 
         <activity
-            android:name=".MaxAdDrawActivity"
+            android:name=".MaxAdMrecActivity"
             android:exported="true"
 
             android:theme="@style/Theme.BsLauncher" />
