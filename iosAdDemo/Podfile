@@ -8,4 +8,7 @@ target 'walkprint' do
   # Pods for walkprint
   pod 'AppLovinMediationGoogleAdapter'
   pod 'AppLovinSDK'
+  pod 'AppLovinMediationMintegralAdapter'
+  pod 'AppLovinMediationBigoAdsAdapter'
+  pod 'AppLovinMediationByteDanceAdapter'
 end
