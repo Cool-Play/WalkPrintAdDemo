@@ -6,9 +6,10 @@
 
 ```
 repositories {
-  maven { url 'https://artifacts.applovin.com/android' }
-  maven { url "https://artifact.bytedance.com/repository/pangle" }
-  maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
+        maven { url 'https://artifacts.applovin.com/android' }
+        maven { url "https://artifact.bytedance.com/repository/pangle" }
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
+        maven { url 'https://jitpack.io' }
 }
 ```
 
@@ -30,6 +31,7 @@ dependencies {
 
     implementation 'com.applovin.mediation:mintegral-adapter:16.9.11.0'
 }
+
 ```
 
 # 3. AndroidManifest.xml

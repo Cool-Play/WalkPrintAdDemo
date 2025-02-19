@@ -2,9 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id("applovin-quality-service")
+    id("applovin-quality-service")    //启动adView 时需要添加
 }
-
+//启动adView 时需要添加
 applovin {
     apiKey = api.apiKey
 }
@@ -95,7 +95,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
     // Applovin
     implementation("com.applovin:applovin-sdk:13.0.1")
-    implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.2.0'
     implementation 'com.adjust.sdk:adjust-android:4.28.7'
     //google mediation adapter
     implementation 'com.applovin.mediation:google-adapter:23.6.0.1'
@@ -108,7 +108,7 @@ dependencies {
     implementation 'com.applovin.mediation:mintegral-adapter:16.9.11.0'
 
     implementation 'io.coil-kt:coil:2.6.0' // 目前最新是2.4.0
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation 'androidx.lifecycle:lifecycle-process:2.8.7'
 
 }
