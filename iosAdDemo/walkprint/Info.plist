@@ -2,21 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>This app uses tracking to deliver personalized ads and improve your experience.</string>
+	<key>Interstitial_UNIT_ID</key>
+	<string>5486428d0af9f6be</string>
+	<key>APPOPEN_UNIT_ID</key>
+	<string>e48f7db166da2b50</string>
+	<key>REWARD_UNIT_ID</key>
+	<string>867431bc5ca1b6b4</string>
 	<key>Banner_AD_UNIT_ID</key>
-	<string>97298779c50ddb3e</string>
+	<string>4796a92e96db73eb</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-2540674760491959~8963686061</string>
-	<key>MERCs_AD_UNIT_ID</key>
-	<string>11db2ba5eb49224d</string>
+	<string>ca-app-pub-2540674760491959~6352037382</string>
+	<key>MRECs_AD_UNIT_ID</key>
+	<string>6a003d2543600c09</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
 	<key>Native_AD_UNIT_ID</key>
-	<string>e95a10d420642b5b</string>
+	<string>2d5e4aac68e691c5</string>
 	<key>PrintURL</key>
 	<string>https://freshinsightsnow.com/</string>
 	<key>PrivacyPolicyURL</key>
@@ -357,6 +361,9 @@
            <string>m8dbw4sv7c.skadnetwork</string>
         </dict><dict>
            <key>SKAdNetworkIdentifier</key>
+           <string>mj797d8u6f.skadnetwork</string>
+        </dict><dict>
+           <key>SKAdNetworkIdentifier</key>
            <string>mlmmfzh3r3.skadnetwork</string>
         </dict><dict>
            <key>SKAdNetworkIdentifier</key>
@@ -382,6 +389,9 @@
         </dict><dict>
            <key>SKAdNetworkIdentifier</key>
            <string>n9x2a789qt.skadnetwork</string>
+        </dict><dict>
+           <key>SKAdNetworkIdentifier</key>
+           <string>ns5j362hk7.skadnetwork</string>
         </dict><dict>
            <key>SKAdNetworkIdentifier</key>
            <string>nzq8sh4pbs.skadnetwork</string>

@@ -13,6 +13,13 @@
 #import <AppLovinSDK/AppLovinSDK.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import <AdSupport/ASIdentifierManager.h>
+#import "MRECAdViewController.h"
+#import "BannerAdViewController.h"
+#import "RewardViewController.h"
+#import "APPOpenViewController.h"
+#import "InterstitialAdViewController.h"
+#import "NativeAdsViewController.h"
+
 @interface HomeViewController ()
 
 @end
@@ -27,34 +34,44 @@
         
     // Title
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
-    titleLabel.text = @"WorkprintDemo";
+    titleLabel.text = @"SZOS Demo";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont boldSystemFontOfSize:24];
     [self.view addSubview:titleLabel];
+        
+    // mrec Ad Button
+    UIButton *mrecAdButton = [self createButtonWithTitle:@"MRECs 广告" action:@selector(goToMRECAd)];
+    mrecAdButton.frame = CGRectMake(100, 150, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:mrecAdButton];
     
-    // AI Draw Button
-    UIButton *aiDrawButton = [self createButtonWithTitle:@"AI绘图" action:@selector(goToAIDraw)];
-    aiDrawButton.frame = CGRectMake(100, 200, self.view.frame.size.width - 200, 50);
-    [self.view addSubview:aiDrawButton];
+    // bammer Ad Button
+    UIButton *bannerAdButton = [self createButtonWithTitle:@"Banner 广告" action:@selector(goToBannerAd)];
+    bannerAdButton.frame = CGRectMake(100, 250, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:bannerAdButton];
     
-    // Web Print Button
-    UIButton *webPrintButton = [self createButtonWithTitle:@"网页打印" action:@selector(goToWebPrint)];
-    webPrintButton.frame = CGRectMake(100, 300, self.view.frame.size.width - 200, 50);
-    [self.view addSubview:webPrintButton];
+    // Interstitial Ad Button
+    UIButton *interAdButton = [self createButtonWithTitle:@"插屏 广告" action:@selector(goToInterstitialAd)];
+    interAdButton.frame = CGRectMake(100, 350, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:interAdButton];
     
-    // Search Image Button
-    UIButton *searchImageButton = [self createButtonWithTitle:@"搜图" action:@selector(goToSearchImage)];
-    searchImageButton.frame = CGRectMake(100, 400, self.view.frame.size.width - 200, 50);
-    [self.view addSubview:searchImageButton];
+    // APPOpen Button
+    UIButton *appOpenButton = [self createButtonWithTitle:@"开屏 广告" action:@selector(goToAppOpen)];
+    appOpenButton.frame = CGRectMake(100, 450, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:appOpenButton];
     
-    // Ads test Button
-    UIButton *testAdsButton = [self createButtonWithTitle:@"广告测试" action:@selector(goToTestAds)];
-    testAdsButton.frame = CGRectMake(100, 600, self.view.frame.size.width - 200, 50);
-    [self.view addSubview:testAdsButton];
+    // reward ad Button
+    UIButton *rewardAdsButton = [self createButtonWithTitle:@"激励 广告" action:@selector(goToRewardAd)];
+    rewardAdsButton.frame = CGRectMake(100, 550, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:rewardAdsButton];
+    
+    // native ad Button
+    UIButton *nativeAdsButton = [self createButtonWithTitle:@"Native 广告" action:@selector(goToNativeAd)];
+    nativeAdsButton.frame = CGRectMake(100, 650, self.view.frame.size.width - 200, 50);
+    [self.view addSubview:nativeAdsButton];
     
     // Integration Check Button
     UIButton *checkButton = [self createButtonWithTitle:@"集成检查" action:@selector(goToCheck)];
-    checkButton.frame = CGRectMake(100, 500, self.view.frame.size.width - 200, 50);
+    checkButton.frame = CGRectMake(100, 750, self.view.frame.size.width - 200, 50);
     [self.view addSubview:checkButton];
 }
 
@@ -80,6 +97,35 @@
 
 - (void)goToSearchImage {
     SearchImageViewController *vc = [[SearchImageViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)goToBannerAd {
+    BannerAdViewController *vc = [[BannerAdViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)goToNativeAd {
+    NativeAdsViewController *vc = [[NativeAdsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)goToMRECAd {
+    MRECAdViewController *vc = [[MRECAdViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)goToRewardAd {
+    RewardViewController *vc = [[RewardViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)goToInterstitialAd {
+    InterstitialAdViewController *vc = [[InterstitialAdViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)goToAppOpen {
+    APPOpenViewController *vc = [[APPOpenViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

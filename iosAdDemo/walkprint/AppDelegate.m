@@ -13,6 +13,9 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 @interface AppDelegate ()
 @property (nonatomic, copy) NSString *idfaStr;
+
+@property (nonatomic, strong) MAAppOpenAd *appOpenAd;
+@property(nonatomic,assign)BOOL hasShowInLaunch;//是否在启动过程中展示过开屏广告
 @end
 
 @implementation AppDelegate
@@ -20,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     [ALPrivacySettings setHasUserConsent: YES];
     // 获取 Info.plist 中的配置项
     NSString * SDK_KEY = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"SDK_KEY"];
@@ -54,6 +58,7 @@
     // Initialize the SDK with the configuration
     [[ALSdk shared] initializeWithConfiguration: initConfig completionHandler:^(ALSdkConfiguration *sdkConfig) {
       // Start loading ads
+        [self loadAppOpenAd]; // 加载开屏广告
     }];
 
     UIColor *barTintColor = [UIColor colorWithRed: 10/255.0 green: 131/255.0 blue: 170/255.0 alpha: 1.0];
@@ -75,6 +80,51 @@
         [UINavigationBar appearance].tintColor = UIColor.whiteColor;
     }
     return YES;
+}
+
+- (void)loadAppOpenAd {
+    NSString *APPOPEN_UNIT_ID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"APPOPEN_UNIT_ID"];
+    self.appOpenAd = [[MAAppOpenAd alloc] initWithAdUnitIdentifier:APPOPEN_UNIT_ID];
+    self.appOpenAd.delegate = self;
+    [self.appOpenAd loadAd];
+}
+
+#pragma mark - MAAdDelegate Protocol
+
+- (void)didLoadAd:(MAAd *)ad {
+    NSLog(@"AppOpen ad loaded successfully.");
+    if(!self.hasShowInLaunch){
+        [self.appOpenAd showAd];
+        self.hasShowInLaunch = true;
+    }
+}
+
+- (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withError:(MAError *)error {
+    NSLog(@"Failed to load AppOpen ad with error: %@", error.message);
+    // 这里可以处理加载失败的情况，例如再次尝试加载或者暂停广告展示
+    [self loadAppOpenAd]; // 在展示失败后尝试重新加载
+}
+
+#pragma mark - MAAppOpenAdDelegate Protocol
+
+// 实现 MAAppOpenAdDelegate 的协议方法
+- (void)didDisplayAd:(MAAd *)ad {
+    NSLog(@"AppOpen ad displayed.");
+}
+
+- (void)didHideAd:(MAAd *)ad {
+    NSLog(@"AppOpen ad dismissed.");
+    // 广告关闭后，切换到主界面
+    [self switchToHomeViewController];
+}
+
+- (void)didClickAd:(MAAd *)ad {
+    NSLog(@"AppOpen ad clicked.");
+}
+
+- (void)didFailToDisplayAd:(MAAd *)ad withError:(MAError *)error {
+    NSLog(@"AppOpen ad failed to display with error: %@", error.message);
+    [self loadAppOpenAd]; // 在展示失败后尝试重新加载
 }
 
 - (void)checkoutIDFA{
@@ -103,6 +153,24 @@
             }
         }
 }
+
+#pragma mark - 切换到主界面
+
+- (void)switchToHomeViewController {
+    // 创建 HomeViewController
+    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    
+    // 切换到主界面
+    [UIView transitionWithView:self.window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.window.rootViewController = navController;
+                    }
+                    completion:nil];
+}
+
 #pragma mark - UISceneSession lifecycle
 
 
