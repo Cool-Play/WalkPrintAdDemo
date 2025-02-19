@@ -5,14 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.ViewGroup.LayoutParams
-import android.widget.EditText
 import android.widget.FrameLayout
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
-import com.adjust.sdk.Adjust
-import com.adjust.sdk.AdjustAdRevenue
-import com.adjust.sdk.AdjustConfig
 import com.applovin.mediation.MaxAd
 import com.applovin.mediation.MaxAdFormat
 import com.applovin.mediation.MaxAdRevenueListener
@@ -22,7 +17,7 @@ import com.applovin.mediation.ads.MaxAdView
 import com.applovin.sdk.AppLovinSdkUtils
 
 
-class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
+class MaxBannerActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenueListener {
 
     private var adContainer: FrameLayout? = null
     private var adMrecContainer: FrameLayout? = null
@@ -62,7 +57,7 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener, MaxAdRevenue
     }
 
     private fun goSearch() {
-        startActivity(Intent(this, MaxSearchResultActivity::class.java))
+        startActivity(Intent(this, MaxNativeActivity::class.java))
     }
 
     // 消亡banner广告，

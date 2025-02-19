@@ -40,6 +40,7 @@ android {
             buildConfigField "String", "bannerId", api.bannerId
             buildConfigField "String", "rewardId", api.rewardId
             buildConfigField "String", "splashId", api.splashId
+            buildConfigField "String", "interstitialId", api.interstitialId
             buildConfigField "String", "sdkKey", api.sdkKey
             minifyEnabled false
             signingConfig signingConfigs.release
@@ -51,6 +52,7 @@ android {
             buildConfigField "String", "bannerId", api.bannerId
             buildConfigField "String", "rewardId", api.rewardId
             buildConfigField "String", "splashId", api.splashId
+            buildConfigField "String", "interstitialId", api.interstitialId
             buildConfigField "String", "sdkKey", api.sdkKey
             minifyEnabled false
             signingConfig signingConfigs.release

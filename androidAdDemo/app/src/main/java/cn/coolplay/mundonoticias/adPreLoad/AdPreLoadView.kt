@@ -16,6 +16,7 @@ import com.applovin.mediation.MaxError
 import com.applovin.mediation.MaxReward
 import com.applovin.mediation.MaxRewardedAdListener
 import com.applovin.mediation.ads.MaxAdView
+import com.applovin.mediation.ads.MaxInterstitialAd
 import com.applovin.mediation.ads.MaxRewardedAd
 import com.applovin.sdk.AppLovinSdkUtils
 import java.util.concurrent.TimeUnit
@@ -30,6 +31,7 @@ class AdPreLoadViewData(
     var isDisPlayed: Boolean = false,
     var maxView: MaxAdView? = null,
     var maxRewardedAd: MaxRewardedAd? = null,
+    var maxInterstitialAd: MaxInterstitialAd? = null,
     val adType: MaxAdFormat = MaxAdFormat.BANNER,
     var adListener: MaxAdListener? = null
 )
@@ -51,6 +53,11 @@ object AdPreLoadView {
             BuildConfig.rewardId,
             adType = MaxAdFormat.REWARDED,
             tag = "RewardView"
+        ),
+        "MaxInterstitialAd" to AdPreLoadViewData(
+            BuildConfig.interstitialId,
+            adType = MaxAdFormat.INTERSTITIAL,
+            tag = "MaxInterstitialAd"
         ),
     )
     var app: Application? = null
@@ -99,8 +106,77 @@ object AdPreLoadView {
                 MaxAdFormat.REWARDED -> {
                     createRewardedView(app!!.applicationContext, adViewMap[tag]!!)
                 }
+
+                MaxAdFormat.INTERSTITIAL -> {
+                    createInterstitialView(app!!.applicationContext, adViewMap[tag]!!)
+                }
             }
         }
+    }
+
+    private fun createInterstitialView(
+        applicationContext: Context?,
+        adPreLoadViewData: AdPreLoadViewData
+    ) {
+        val adView = MaxInterstitialAd(adPreLoadViewData.adUnitId, applicationContext)
+        var retryAttempt = 0.0
+        adView.setListener(object : MaxAdListener {
+            override fun onAdLoaded(p0: MaxAd) {
+                retryAttempt = 0.0
+                adPreLoadViewData.isLoaded = true
+                adPreLoadViewData.adListener?.onAdLoaded(p0)
+                Log.e("createInterstitialView", "onAdLoaded")
+            }
+
+            override fun onAdDisplayed(p0: MaxAd) {
+                Log.e("createInterstitialView", "onAdDisplayed")
+                adPreLoadViewData.isDisPlayed = true
+                adPreLoadViewData.adListener?.onAdDisplayed(p0)
+            }
+
+            override fun onAdHidden(p0: MaxAd) {
+                Log.e("createInterstitialView", "onAdHidden")
+                adPreLoadViewData.isDisPlayed = false
+                adView.loadAd()
+            }
+
+            override fun onAdClicked(p0: MaxAd) {
+                Log.e("createInterstitialView", "onAdClicked")
+                adPreLoadViewData.adListener?.onAdClicked(p0)
+            }
+
+            override fun onAdLoadFailed(p0: String, p1: MaxError) {
+                Log.e("createInterstitialView", "onAdLoadFailed")
+                adPreLoadViewData.isDisPlayed = false
+                adPreLoadViewData.isLoaded = false
+                adPreLoadViewData.adListener?.onAdLoadFailed(p0, p1)
+                // Rewarded ad failed to load
+                // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay (in this case 64 seconds)
+                retryAttempt++
+                val delayMillis = TimeUnit.SECONDS.toMillis(
+                    2.0.pow(6.0.coerceAtMost(retryAttempt))
+                        .toLong()
+                )
+
+                Handler(Looper.myLooper()!!).postDelayed({ adView.loadAd() }, delayMillis)
+            }
+
+            override fun onAdDisplayFailed(p0: MaxAd, p1: MaxError) {
+                Log.e("createInterstitialView", "onAdDisplayFailed")
+                adPreLoadViewData.isDisPlayed = false
+                adPreLoadViewData.isLoaded = false
+                adPreLoadViewData.adListener?.onAdDisplayFailed(p0, p1)
+                retryAttempt++
+                val delayMillis = TimeUnit.SECONDS.toMillis(
+                    2.0.pow(6.0.coerceAtMost(retryAttempt))
+                        .toLong()
+                )
+
+                Handler(Looper.myLooper()!!).postDelayed({ adView.loadAd() }, delayMillis)
+            }
+        })
+        adPreLoadViewData.maxInterstitialAd = adView
+        adView.loadAd()
     }
 
     private fun createRewardedView(

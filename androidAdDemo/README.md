@@ -48,7 +48,7 @@ dependencies {
                 
          <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2540674760491959~9832388524" />
+            android:value="ca-app-pub-2540674760491959~4374942436" />
         
     </application>
 </manifest>
@@ -130,7 +130,7 @@ activity_search.xml
         android:layout_height="match_parent" />
 
 
-class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
+class MaxBannerActivity : AppCompatActivity(), MaxAdViewAdListener {
 
     private var adContainer: FrameLayout? = null
     private var adMrecContainer: FrameLayout? = null
@@ -173,7 +173,7 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
     }
 
     private fun goSearch() {
-        startActivity(Intent(this, MaxSearchResultActivity::class.java))
+        startActivity(Intent(this, MaxNativeActivity::class.java))
     }
 
     // 消亡banner广告，
@@ -228,7 +228,7 @@ class MaxSearchActivity : AppCompatActivity(), MaxAdViewAdListener {
 }
 ```
 
-# 7. RecyclerView 广告
+# 7. RecyclerView+Native 广告
 
 ```
 activity_search_result.xml
@@ -239,7 +239,7 @@ activity_search_result.xml
 
 
         
-class MaxSearchResultActivity : AppCompatActivity(), MaxAdViewAdListener {
+class MaxNativeActivity : AppCompatActivity(), MaxAdViewAdListener {
        // Create recycler adapter
         val originalAdapter = CustomRecyclerAdapter(this, sampleData)
 
