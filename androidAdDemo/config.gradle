@@ -3,7 +3,8 @@ ext {
     lifecycle_version = '2.3.1'
     archLifecycleVersion = '2.2.0'
     appNamespace = 'cn.coolplay.mundonoticias'
-    appId = 'com.yhk.rabbit.print.walkprint'
+//    appId = 'com.yhk.rabbit.print.walkprint'
+    appId = 'cn.coolplay.launcher'
     ktx = '1.13.1'
     appcompat = '1.7.0'
     material3 = '1.2.1'
@@ -15,7 +16,7 @@ ext {
             nativeId: "\"00ca9204561d0026\"",
             rewardId: "\"93bd8eb54e7cf72f\"",
     ]
-    versions = [minSdkVersion    : 21,
+    versions = [minSdkVersion    : 24,
                 compileSdkVersion: 34,
                 targetSdkVersion : 34,
                 versionCode      : 1,

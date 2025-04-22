@@ -8,17 +8,15 @@ import android.os.Bundle
 import android.util.Log
 import cn.coolplay.mundonoticias.adPreLoad.AdPreLoadView
 import com.adjust.sdk.Adjust
-import com.adjust.sdk.AdjustConfig
 import com.applovin.sdk.AppLovinMediationProvider
 import com.applovin.sdk.AppLovinSdk
 import com.applovin.sdk.AppLovinSdkInitializationConfiguration
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
-import java.util.Collections
+import com.mofeng.ff.component.open.Sdk
 import java.util.concurrent.Executors
 
 
 class App : Application() {
-
 
 
     override fun attachBaseContext(base: Context?) {
@@ -28,7 +26,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        initSdk()
+//        initSdk()
+        Sdk.init(this)
     }
 
     private fun initSdk() {

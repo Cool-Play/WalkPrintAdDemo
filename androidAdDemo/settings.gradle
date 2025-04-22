@@ -22,6 +22,10 @@ dependencyResolutionManagement {
             url = uri("../seattleTvSdkInternal/local/seattleTvSdk")
         }
         maven { url 'https://jitpack.io' }
+        maven { url 'https://repo.maven.apache.org/maven2' }
+        maven { url "https://nexus-neolink.zeasn.com/repository/android_plantform/" }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.aliyun.com/repository/public" }
     }
 }
 
